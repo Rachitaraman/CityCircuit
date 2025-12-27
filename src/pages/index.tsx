@@ -109,7 +109,7 @@ export default function Home() {
   useEffect(() => {
     const loadStats = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/admin/stats');
+        const response = await fetch('/api/admin/stats');
         if (response.ok) {
           const data = await response.json();
           setStats({
@@ -135,7 +135,7 @@ export default function Home() {
     
     try {
       // Call the real backend API for route search with origin and destination
-      const apiUrl = `http://localhost:5000/api/routes?origin=${encodeURIComponent(filters.origin)}&destination=${encodeURIComponent(filters.destination)}&limit=10`;
+      const apiUrl = `/api/routes?origin=${encodeURIComponent(filters.origin)}&destination=${encodeURIComponent(filters.destination)}&limit=10`;
       
       console.log('🔍 Searching routes:', { origin: filters.origin, destination: filters.destination });
       console.log('📡 API URL:', apiUrl);
