@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tensorflow\python\ops\linalg\linear_operator_zeros.py
+# hypothesis_version: 6.148.8
+
+['LinearOperatorZeros', 'add_to_tensor', 'assert_proper_shapes', 'assert_self_adjoint', 'batch_shape', 'batch_shape_arg', 'dtype', 'num_columns', 'num_rows']

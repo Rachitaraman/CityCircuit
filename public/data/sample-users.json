@@ -1,0 +1,87 @@
+[
+  {
+    "id": "user-001",
+    "email": "admin@citycircuit.com",
+    "name": "System Administrator",
+    "role": "admin",
+    "isAdmin": true,
+    "preferences": {
+      "language": "en",
+      "notifications": true,
+      "theme": "light",
+      "preferredRoutes": ["route-001", "route-003"],
+      "accessibilityNeeds": []
+    },
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-12-26T10:30:00.000Z"
+  },
+  {
+    "id": "user-002",
+    "email": "operator@citycircuit.com",
+    "name": "Bus Operator",
+    "role": "operator",
+    "isAdmin": false,
+    "preferences": {
+      "language": "en",
+      "notifications": true,
+      "theme": "dark",
+      "preferredRoutes": ["route-001", "route-002"],
+      "accessibilityNeeds": []
+    },
+    "isActive": true,
+    "createdAt": "2024-01-05T08:00:00.000Z",
+    "updatedAt": "2024-12-26T10:30:00.000Z"
+  },
+  {
+    "id": "user-003",
+    "email": "passenger1@example.com",
+    "name": "Regular Commuter",
+    "role": "passenger",
+    "isAdmin": false,
+    "preferences": {
+      "language": "en",
+      "notifications": true,
+      "theme": "light",
+      "preferredRoutes": ["route-001"],
+      "accessibilityNeeds": ["wheelchair_accessible"]
+    },
+    "isActive": true,
+    "createdAt": "2024-01-10T12:00:00.000Z",
+    "updatedAt": "2024-12-26T10:30:00.000Z"
+  },
+  {
+    "id": "user-004",
+    "email": "passenger2@example.com",
+    "name": "Student User",
+    "role": "passenger",
+    "isAdmin": false,
+    "preferences": {
+      "language": "es",
+      "notifications": false,
+      "theme": "dark",
+      "preferredRoutes": ["route-002"],
+      "accessibilityNeeds": []
+    },
+    "isActive": true,
+    "createdAt": "2024-02-01T14:30:00.000Z",
+    "updatedAt": "2024-12-26T10:30:00.000Z"
+  },
+  {
+    "id": "user-005",
+    "email": "passenger3@example.com",
+    "name": "Airport Traveler",
+    "role": "passenger",
+    "isAdmin": false,
+    "preferences": {
+      "language": "fr",
+      "notifications": true,
+      "theme": "light",
+      "preferredRoutes": ["route-003"],
+      "accessibilityNeeds": ["audio_announcements", "braille_signage"]
+    },
+    "isActive": true,
+    "createdAt": "2024-02-15T09:45:00.000Z",
+    "updatedAt": "2024-12-26T10:30:00.000Z"
+  }
+]

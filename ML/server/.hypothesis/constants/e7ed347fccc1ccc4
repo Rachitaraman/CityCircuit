@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\layers\core\embedding.py
+# hypothesis_version: 6.148.8
+
+['activity_regularizer', 'embeddings', 'embeddings_scale', 'he_uniform', 'input_dim', 'input_length', 'int32', 'int64', 'int8', 'lora_embeddings_a', 'lora_embeddings_b', 'lora_rank', 'mask_zero', 'ones', 'output_dim', 'uniform', 'zeros']

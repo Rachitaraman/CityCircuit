@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\html\Button.py
+# hypothesis_version: 6.148.8
+
+['Button', '_explicit_args', 'accessKey', 'aria-', 'aria-*', 'autoFocus', 'children', 'className', 'contentEditable', 'contextMenu', 'dash_html_components', 'data-', 'data-*', 'dir', 'disable_n_clicks', 'disabled', 'draggable', 'form', 'formAction', 'formEncType', 'formMethod', 'formNoValidate', 'formTarget', 'hidden', 'id', 'key', 'lang', 'loading_state', 'n_clicks', 'n_clicks_timestamp', 'name', 'role', 'spellCheck', 'style', 'tabIndex', 'title', 'type', 'value']

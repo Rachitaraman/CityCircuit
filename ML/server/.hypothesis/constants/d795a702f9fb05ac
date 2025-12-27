@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tensorflow\python\tpu\tpu_embedding_v2.py
+# hypothesis_version: 6.148.8
+
+['/', 'Identity', 'Placeholder', 'TPU', 'TPUEmbeddingCallback', 'TPUReplicatedInput', '_device_assignment', '_tpu_embedding_layer', '_tpu_input_identity', 'dtype', 'inference', 'initial_value', 'name', 'outer_graph', 'parameters', 'shape', 'shard_info', 'table_{}', 'train', '{}_{}']

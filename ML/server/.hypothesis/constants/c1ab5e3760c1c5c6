@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\models\model.py
+# hypothesis_version: 6.148.8
+
+['/', 'args', 'backend_tensor', 'input_layers', 'input_shape', 'inputs', 'jax', 'keras.Model', 'keras.models.Model', 'kwargs', 'layers', 'metrics_variables', 'name', 'numpy', 'numpy_array', 'onnx', 'openvino', 'optimizer_variables', 'output_layers', 'outputs', 'shapes_dict', 'tensorflow', 'tf_saved_model', 'torch', 'trainable_variables', 'type_check']

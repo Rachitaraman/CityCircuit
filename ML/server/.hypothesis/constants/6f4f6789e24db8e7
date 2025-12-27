@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tensorflow\lite\profiling\proto\model_runtime_info_pb2.py
+# hypothesis_version: 6.148.8
+
+[b'\x10\x01', b'P\x01', 132, 227, 230, 461, 541, 544, 858, 860, 942, 945, 1146, 1407, 1410, 1586, 'execution_plan', 'inputs', 'intermediates', 'outputs', 'shape', 'temporaries']

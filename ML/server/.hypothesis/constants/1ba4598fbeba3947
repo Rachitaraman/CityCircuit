@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\algorithms\path_matrix.py
+# hypothesis_version: 6.148.8
+
+[0.0, 0.8, 0.9, 0.95, 1.0, 1.1, 1.15, 1.2, 1.3, 1.4, 1.5, 100.0, 111, 500, 1000, 2000, 5000, 6371, 8000, 'algorithm_used', 'average_km', 'average_minutes', 'avg_distance_km', 'connectivity_hubs', 'distance_stats', 'end', 'error', 'euclidean', 'factor', 'haversine', 'inf', 'manhattan', 'maximum_km', 'maximum_minutes', 'midday', 'minimum_km', 'minimum_minutes', 'now', 'off_peak', 'peak_evening', 'peak_morning', 'start', 'stop_id', 'time_stats', 'total_segments', 'total_stops', 'weighted']

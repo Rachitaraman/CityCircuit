@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\layers\preprocessing\stft_spectrogram.py
+# hypothesis_version: 6.148.8
+
+[256, 'angle', 'channels_last', 'data_format', 'density', 'expand_dims', 'fft_length', 'float16', 'float32', 'float64', 'frame_length', 'frame_step', 'hann', 'imag', 'imag_kernel', 'log', 'magnitude', 'mode', 'padding', 'periodic', 'psd', 'real', 'real_kernel', 'same', 'scaling', 'spectrum', 'stft', 'valid', 'window']

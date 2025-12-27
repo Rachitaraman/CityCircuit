@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\algorithms\optimization_engine.py
+# hypothesis_version: 6.148.8
+
+[-0.1, 0.0, 0.01, 0.1, 5.0, 10.0, 20.0, 60.0, 100.0, 35000.0, 100, 5000, 6371, '18-25', '25-64', '65+', 'accessibility_issue', 'average_metrics', 'best_optimization', 'coordinates', 'cost_savings_percent', 'error', 'generated_at', 'high', 'high_demand_stop', 'improvement_rate', 'income', 'large_gap', 'latitude', 'lighting', 'longitude', 'overall_score', 'population', 'route_id', 'route_name', 'seating', 'severity', 'shelter', 'tactile_paving', 'type', 'worst_optimization']

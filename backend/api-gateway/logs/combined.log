@@ -1,0 +1,45 @@
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:47:59.502Z"}
+{"level":"warn","message":"Rate limit exceeded for test_service","service":"api-gateway","timestamp":"2025-12-25T09:47:59.652Z"}
+{"level":"warn","message":"Circuit breaker for test_circuit_service moved to OPEN","service":"api-gateway","timestamp":"2025-12-25T09:47:59.658Z"}
+{"level":"info","message":"Circuit breaker for test_recovery_service moved to HALF_OPEN","service":"api-gateway","timestamp":"2025-12-25T09:47:59.660Z"}
+{"level":"info","message":"Circuit breaker for test_success_service moved to CLOSED","service":"api-gateway","timestamp":"2025-12-25T09:47:59.663Z"}
+{"level":"warn","message":"Rate limit exceeded for test_api_service","service":"api-gateway","timestamp":"2025-12-25T09:47:59.727Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:48:23.526Z"}
+{"level":"warn","message":"Rate limit exceeded for test_service","service":"api-gateway","timestamp":"2025-12-25T09:48:23.669Z"}
+{"level":"warn","message":"Circuit breaker for test_circuit_service moved to OPEN","service":"api-gateway","timestamp":"2025-12-25T09:48:23.673Z"}
+{"level":"info","message":"Circuit breaker for test_recovery_service moved to HALF_OPEN","service":"api-gateway","timestamp":"2025-12-25T09:48:23.675Z"}
+{"level":"info","message":"Circuit breaker for test_success_service moved to CLOSED","service":"api-gateway","timestamp":"2025-12-25T09:48:23.678Z"}
+{"level":"warn","message":"Rate limit exceeded for test_api_service","service":"api-gateway","timestamp":"2025-12-25T09:48:23.712Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:49:16.165Z"}
+{"level":"warn","message":"Rate limit exceeded for test_service","service":"api-gateway","timestamp":"2025-12-25T09:49:16.332Z"}
+{"level":"warn","message":"Circuit breaker for test_circuit_service moved to OPEN","service":"api-gateway","timestamp":"2025-12-25T09:49:16.338Z"}
+{"level":"info","message":"Circuit breaker for test_recovery_service moved to HALF_OPEN","service":"api-gateway","timestamp":"2025-12-25T09:49:16.340Z"}
+{"level":"info","message":"Circuit breaker for test_success_service moved to CLOSED","service":"api-gateway","timestamp":"2025-12-25T09:49:16.342Z"}
+{"level":"warn","message":"Rate limit exceeded for test_api_service","service":"api-gateway","timestamp":"2025-12-25T09:49:16.385Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:49:17.456Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:49:59.512Z"}
+{"level":"warn","message":"Rate limit exceeded for test_service","service":"api-gateway","timestamp":"2025-12-25T09:49:59.659Z"}
+{"level":"warn","message":"Circuit breaker for test_circuit_service moved to OPEN","service":"api-gateway","timestamp":"2025-12-25T09:49:59.667Z"}
+{"level":"info","message":"Circuit breaker for test_recovery_service moved to HALF_OPEN","service":"api-gateway","timestamp":"2025-12-25T09:49:59.669Z"}
+{"level":"info","message":"Circuit breaker for test_success_service moved to CLOSED","service":"api-gateway","timestamp":"2025-12-25T09:49:59.672Z"}
+{"level":"warn","message":"Rate limit exceeded for test_api_service","service":"api-gateway","timestamp":"2025-12-25T09:49:59.707Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:50:00.906Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:51:02.298Z"}
+{"level":"warn","message":"Rate limit exceeded for test_service","service":"api-gateway","timestamp":"2025-12-25T09:51:02.474Z"}
+{"level":"warn","message":"Circuit breaker for test_circuit_service moved to OPEN","service":"api-gateway","timestamp":"2025-12-25T09:51:02.482Z"}
+{"level":"info","message":"Circuit breaker for test_recovery_service moved to HALF_OPEN","service":"api-gateway","timestamp":"2025-12-25T09:51:02.485Z"}
+{"level":"info","message":"Circuit breaker for test_success_service moved to CLOSED","service":"api-gateway","timestamp":"2025-12-25T09:51:02.488Z"}
+{"level":"warn","message":"Rate limit exceeded for test_api_service","service":"api-gateway","timestamp":"2025-12-25T09:51:02.533Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:51:03.899Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:51:28.075Z"}
+{"level":"warn","message":"Rate limit exceeded for test_service","service":"api-gateway","timestamp":"2025-12-25T09:51:28.220Z"}
+{"level":"warn","message":"Circuit breaker for test_circuit_service moved to OPEN","service":"api-gateway","timestamp":"2025-12-25T09:51:28.227Z"}
+{"level":"info","message":"Circuit breaker for test_recovery_service moved to HALF_OPEN","service":"api-gateway","timestamp":"2025-12-25T09:51:28.229Z"}
+{"level":"info","message":"Circuit breaker for test_success_service moved to CLOSED","service":"api-gateway","timestamp":"2025-12-25T09:51:28.232Z"}
+{"level":"warn","message":"Rate limit exceeded for test_api_service","service":"api-gateway","timestamp":"2025-12-25T09:51:28.263Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T09:51:28.658Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T12:20:37.932Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T12:20:47.499Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T12:21:18.927Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T12:31:35.684Z"}
+{"level":"warn","message":"Redis not configured, using in-memory cache fallback","service":"api-gateway","timestamp":"2025-12-25T12:44:34.571Z"}

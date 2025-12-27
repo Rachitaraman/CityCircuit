@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\models\user.py
+# hypothesis_version: 6.148.8
+
+[100, 200, 'Enable notifications', 'Language code', 'Last login timestamp', 'Organization name', 'Preferred map style', 'UI theme preference', 'User preferences', "User's email address", "User's full name", '^(light|dark)$', 'admin', 'createdAt', 'default', 'en', 'lastLoginAt', 'light', 'mapStyle', 'operator', 'passenger']

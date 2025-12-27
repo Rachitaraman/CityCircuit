@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\h5py\_hl\dataset.py
+# hypothesis_version: 6.148.8
+
+['"%s"', '("anonymous")', ', ', '/', '=f4', 'C', 'Dataset', 'O', 'S', 'V', '_fast_reader', '_selector', 'fletcher32', 'flush', 'gzip', 'lzf', 'refresh', 'scaleoffset', 'shape', 'shuffle', 'size', 'strict', 'szip', 'utf-8']

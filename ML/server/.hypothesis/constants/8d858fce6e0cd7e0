@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\dcc\express.py
+# hypothesis_version: 6.148.8
+
+['rb', 'to_csv', 'to_excel', 'to_feather', 'to_html', 'to_json', 'to_msgpack', 'to_parquet', 'to_pickle', 'to_stata']

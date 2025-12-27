@@ -1,0 +1,51 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Circular Gradient Background -->
+    <radialGradient id="circularGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Emerald Gradient -->
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06d6a0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Circular Background -->
+  <circle cx="30" cy="30" r="28" fill="url(#circularGradient)"/>
+  <circle cx="30" cy="30" r="28" fill="none" stroke="white" stroke-width="2" opacity="0.2"/>
+  
+  <!-- Modern Bus Icon -->
+  <g transform="translate(15, 18)">
+    <!-- Bus Body -->
+    <rect x="0" y="6" width="30" height="16" rx="3" fill="white"/>
+    
+    <!-- Bus Windows -->
+    <rect x="3" y="9" width="5" height="3" rx="0.5" fill="url(#circularGradient)" opacity="0.7"/>
+    <rect x="10" y="9" width="5" height="3" rx="0.5" fill="url(#circularGradient)" opacity="0.7"/>
+    <rect x="17" y="9" width="5" height="3" rx="0.5" fill="url(#circularGradient)" opacity="0.7"/>
+    <rect x="24" y="9" width="3" height="3" rx="0.5" fill="url(#circularGradient)" opacity="0.7"/>
+    
+    <!-- Bus Wheels -->
+    <circle cx="7" cy="26" r="2.5" fill="white"/>
+    <circle cx="7" cy="26" r="1.5" fill="url(#emeraldGrad)"/>
+    <circle cx="23" cy="26" r="2.5" fill="white"/>
+    <circle cx="23" cy="26" r="1.5" fill="url(#emeraldGrad)"/>
+    
+    <!-- Front Detail -->
+    <rect x="0" y="13" width="2" height="6" rx="1" fill="url(#emeraldGrad)"/>
+  </g>
+  
+  <!-- Circuit Accent Lines -->
+  <g opacity="0.6">
+    <path d="M10 45 Q15 40 20 45 T30 45" stroke="url(#emeraldGrad)" stroke-width="1.5" fill="none"/>
+    <path d="M35 15 Q40 10 45 15 T55 15" stroke="url(#emeraldGrad)" stroke-width="1.5" fill="none"/>
+    <circle cx="15" cy="42" r="1" fill="url(#emeraldGrad)"/>
+    <circle cx="25" cy="48" r="0.8" fill="url(#emeraldGrad)"/>
+    <circle cx="40" cy="12" r="1" fill="url(#emeraldGrad)"/>
+    <circle cx="50" cy="18" r="0.8" fill="url(#emeraldGrad)"/>
+  </g>
+</svg>

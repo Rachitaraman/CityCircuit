@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\_validate.py
+# hypothesis_version: 6.148.8
+
+['.{', '<(.*?)>', 'Callable', '[*]', '[*] ', '__main__', 'assets_folder', 'children', 'component_event', 'component_property', 'id', 'initial_duplicate', 'layout', 'long', 'module', 'output', 'path', 'progress', 'property', 'raw_inputs', 'running', 's', 'static_folder', 'tree with one value', 'value']

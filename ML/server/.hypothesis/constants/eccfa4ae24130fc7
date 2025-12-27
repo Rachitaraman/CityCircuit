@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\scipy\sparse\_coo.py
+# hypothesis_version: 6.148.8
+
+[100, 'A', 'C', 'F', 'axis out of bounds', 'col', 'coo', 'coo_array', 'coo_matrix', 'coords', 'i', 'invalid input format', 'isspmatrix_coo', 'restructuredtext en', 'row']

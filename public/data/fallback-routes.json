@@ -1,0 +1,64 @@
+[
+  {
+    "id": "fallback-route-1",
+    "name": "City Center Loop",
+    "description": "Basic route covering main city center areas",
+    "stops": [
+      {
+        "id": "stop-1",
+        "name": "Central Station",
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "address": "123 Main St"
+      },
+      {
+        "id": "stop-2",
+        "name": "City Hall",
+        "latitude": 40.7130,
+        "longitude": -74.0065,
+        "address": "456 Government Ave"
+      },
+      {
+        "id": "stop-3",
+        "name": "Shopping District",
+        "latitude": 40.7125,
+        "longitude": -74.0055,
+        "address": "789 Commerce St"
+      }
+    ],
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "fallback-route-2",
+    "name": "University Express",
+    "description": "Route connecting university campus to downtown",
+    "stops": [
+      {
+        "id": "stop-4",
+        "name": "University Campus",
+        "latitude": 40.7140,
+        "longitude": -74.0070,
+        "address": "100 University Blvd"
+      },
+      {
+        "id": "stop-5",
+        "name": "Student Housing",
+        "latitude": 40.7135,
+        "longitude": -74.0068,
+        "address": "200 Student Way"
+      },
+      {
+        "id": "stop-1",
+        "name": "Central Station",
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "address": "123 Main St"
+      }
+    ],
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  }
+]

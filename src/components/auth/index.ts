@@ -1,0 +1,12 @@
+export { LoginForm } from './LoginForm';
+export { PhoneLoginForm } from './PhoneLoginForm';
+export { PhoneRegisterForm } from './PhoneRegisterForm';
+export { AuthModal } from './AuthModal';
+export { UserProfile } from './UserProfile';
+export { ProtectedRoute, RoleGate, withRoleProtection } from './ProtectedRoute';
+export type { LoginFormProps } from './LoginForm';
+export type { PhoneLoginFormProps } from './PhoneLoginForm';
+export type { PhoneRegisterFormProps } from './PhoneRegisterForm';
+export type { AuthModalProps } from './AuthModal';
+export type { UserProfileProps } from './UserProfile';
+export type { ProtectedRouteProps, RoleGateProps } from './ProtectedRoute';

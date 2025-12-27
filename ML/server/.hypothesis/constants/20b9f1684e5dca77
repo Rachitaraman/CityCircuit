@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\development\_all_keywords.py
+# hypothesis_version: 6.148.8
+
+['...', 'FALSE', 'False', 'Inf', 'NA', 'NA_character_', 'NA_complex_', 'NA_integer_', 'NA_real_', 'NULL', 'NaN', 'None', 'TRUE', 'True', 'and', 'as', 'assert', 'async', 'await', 'baremodule', 'begin', 'break', 'catch', 'class', 'const', 'continue', 'def', 'del', 'do', 'elif', 'else', 'elseif', 'end', 'except', 'exec', 'export', 'false', 'finally', 'for', 'from', 'function', 'global', 'if', 'import', 'in', 'is', 'lambda', 'let', 'local', 'macro', 'module', 'next', 'nonlocal', 'not', 'or', 'pass', 'print', 'quote', 'raise', 'repeat', 'return', 'struct', 'true', 'try', 'using', 'while', 'with', 'yield']

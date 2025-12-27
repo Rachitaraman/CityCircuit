@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\dcc\DatePickerSingle.py
+# hypothesis_version: 6.148.8
+
+['DatePickerSingle', '_explicit_args', 'calendar_orientation', 'children', 'className', 'clearable', 'dash_core_components', 'date', 'day_size', 'disabled', 'disabled_days', 'display_format', 'first_day_of_week', 'id', 'is_RTL', 'loading_state', 'max_date_allowed', 'min_date_allowed', 'month_format', 'persisted_props', 'persistence', 'persistence_type', 'placeholder', 'show_outside_days', 'stay_open_on_select', 'style', 'with_portal']

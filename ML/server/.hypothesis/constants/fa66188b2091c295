@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\models\optimization.py
+# hypothesis_version: 6.148.8
+
+[0.2, 0.3, 5.0, 100.0, 100, 'cost', 'costSavings', 'cost_savings', 'coverage', 'distance', 'distanceReduction', 'distance_reduction', 'generatedAt', 'generated_at', 'optimizedRoute', 'optimized_route_name', 'originalRouteId', 'original_route_id', 'overall_score', 'populationData', 'time', 'timeImprovement', 'time_improvement']

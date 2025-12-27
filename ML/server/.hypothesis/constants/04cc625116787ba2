@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\dcc\Slider.py
+# hypothesis_version: 6.148.8
+
+['Slider', '_explicit_args', 'children', 'className', 'dash_core_components', 'disabled', 'dots', 'drag_value', 'id', 'included', 'loading_state', 'marks', 'max', 'min', 'persisted_props', 'persistence', 'persistence_type', 'step', 'tooltip', 'updatemode', 'value', 'vertical', 'verticalHeight']

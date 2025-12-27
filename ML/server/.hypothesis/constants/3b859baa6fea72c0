@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\models\route.py
+# hypothesis_version: 6.148.8
+
+[0.0, 100, 200, 500, 1000, 1440, 'Available amenities', 'Bus stop name', 'List of bus stop IDs', 'Origin bus stop ID', 'Physical address', 'Route ID to optimize', 'Route ID to update', 'Route description', 'Route name', 'cost', 'coverage', 'createdAt', 'dailyPassengerCount', 'departureTime', 'distance', 'estimatedTravelTime', 'isAccessible', 'isActive', 'maxTransfers', 'operatorId', 'optimizationGoals', 'optimizationScore', 'optimization_goals', 'populationDataId', 'routeId', 'stops', 'time', 'updatedAt']

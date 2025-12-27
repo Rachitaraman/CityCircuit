@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\dcc\Link.py
+# hypothesis_version: 6.148.8
+
+['Link', 'Required argument `', '_explicit_args', '` was not specified.', 'children', 'className', 'dash_core_components', 'href', 'id', 'loading_state', 'refresh', 'style', 'target', 'title']

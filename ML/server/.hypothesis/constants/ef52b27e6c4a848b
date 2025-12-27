@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\multiprocess\process.py
+# hypothesis_version: 6.148.8
+
+['-', '/mp', ':', '<%s>', 'BaseProcess', 'MainProcess', 'Process %s:\n', 'SIG', '_', 'active_children', 'authkey', 'closed', 'current_process', 'daemon', 'exitcode=%s', 'initial', 'name=%r', 'parent=%s', 'parent_process', 'pid=%s', 'process not started', 'semprefix', 'started', 'stopped', 'unknown']

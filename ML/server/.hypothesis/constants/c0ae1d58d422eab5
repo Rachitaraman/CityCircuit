@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\optimizers\adafactor.py
+# hypothesis_version: 6.148.8
+
+[-0.8, 1e-30, 0.001, 0.99, 1.0, 'adafactor', 'beta_2_decay', 'clip_threshold', 'epsilon_1', 'epsilon_2', 'relative_step', 'velocity']

@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\dcc\DatePickerRange.py
+# hypothesis_version: 6.148.8
+
+['DatePickerRange', '_explicit_args', 'calendar_orientation', 'children', 'className', 'clearable', 'dash_core_components', 'day_size', 'disabled', 'disabled_days', 'display_format', 'end_date', 'end_date_id', 'first_day_of_week', 'id', 'is_RTL', 'loading_state', 'max_date_allowed', 'min_date_allowed', 'minimum_nights', 'month_format', 'persisted_props', 'persistence', 'persistence_type', 'show_outside_days', 'start_date', 'start_date_id', 'stay_open_on_select', 'style', 'updatemode', 'with_portal']

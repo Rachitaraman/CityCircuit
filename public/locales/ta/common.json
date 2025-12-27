@@ -1,0 +1,140 @@
+{
+  "navigation": {
+    "home": "முகப்பு",
+    "routes": "வழிகள்",
+    "optimization": "மேம்படுத்தல்",
+    "analytics": "பகுப்பாய்வு",
+    "profile": "சுயவிவரம்",
+    "login": "உள்நுழைவு",
+    "logout": "வெளியேறு",
+    "dashboard": "டாஷ்போர்டு"
+  },
+  "common": {
+    "loading": "ஏற்றுகிறது...",
+    "error": "பிழை",
+    "success": "வெற்றி",
+    "cancel": "ரத்து செய்",
+    "save": "சேமி",
+    "delete": "நீக்கு",
+    "edit": "திருத்து",
+    "add": "சேர்",
+    "search": "தேடு",
+    "filter": "வடிகட்டி",
+    "clear": "அழி",
+    "submit": "சமர்ப்பி",
+    "back": "பின்",
+    "next": "அடுத்து",
+    "previous": "முந்தைய",
+    "close": "மூடு",
+    "confirm": "உறுதிப்படுத்து",
+    "yes": "ஆம்",
+    "no": "இல்லை"
+  },
+  "language": {
+    "select": "மொழி தேர்ந்தெடு",
+    "english": "English",
+    "hindi": "हिंदी",
+    "marathi": "मराठी",
+    "gujarati": "ગુજરાતી",
+    "tamil": "தமிழ்"
+  },
+  "theme": {
+    "light": "வெளிச்சம்",
+    "dark": "இருள்",
+    "toggle": "தீம் மாற்று"
+  },
+  "routes": {
+    "title": "பேருந்து வழிகள்",
+    "search": "வழிகளைத் தேடு",
+    "from": "இருந்து",
+    "to": "வரை",
+    "departure": "புறப்பாடு நேரம்",
+    "arrival": "வருகை நேரம்",
+    "duration": "கால அளவு",
+    "stops": "நிறுத்தங்கள்",
+    "distance": "தூரம்",
+    "fare": "கட்டணம்",
+    "optimize": "வழியை மேம்படுத்து",
+    "details": "வழி விவரங்கள்",
+    "noRoutes": "வழிகள் எதுவும் கிடைக்கவில்லை",
+    "selectRoute": "ஒரு வழியைத் தேர்ந்தெடு",
+    "routeInfo": "வழி தகவல்",
+    "estimatedTime": "மதிப்பிடப்பட்ட பயண நேரம்",
+    "optimizationScore": "மேம்படுத்தல் மதிப்பெண்"
+  },
+  "stops": {
+    "title": "பேருந்து நிறுத்தங்கள்",
+    "name": "நிறுத்தத்தின் பெயர்",
+    "address": "முகவரி",
+    "amenities": "வசதிகள்",
+    "accessibility": "அணுகல்",
+    "accessible": "சக்கர நாற்காலி அணுகக்கூடிய",
+    "notAccessible": "அணுகக்கூடியதல்ல",
+    "passengerCount": "தினசரி பயணிகள்",
+    "nearbyStops": "அருகிலுள்ள நிறுத்தங்கள்"
+  },
+  "optimization": {
+    "title": "வழி மேம்படுத்தல்",
+    "analyze": "வழியை பகுப்பாய்வு செய்",
+    "suggestions": "மேம்படுத்தல் பரிந்துரைகள்",
+    "improvements": "சாத்தியமான மேம்பாடுகள்",
+    "timeReduction": "நேர குறைப்பு",
+    "distanceReduction": "தூர குறைப்பு",
+    "coverageIncrease": "கவரேஜ் அதிகரிப்பு",
+    "costSavings": "செலவு சேமிப்பு",
+    "efficiency": "திறன் மதிப்பெண்",
+    "applyOptimization": "மேம்படுத்தலை பயன்படுத்து"
+  },
+  "map": {
+    "title": "வழி வரைபடம்",
+    "fitToView": "காட்சிக்கு பொருத்து",
+    "showAllRoutes": "அனைத்து வழிகளையும் காட்டு",
+    "mapStyle": "வரைபட பாணி",
+    "default": "இயல்புநிலை",
+    "satellite": "செயற்கைக்கோள்",
+    "terrain": "நிலப்பரப்பு",
+    "legend": "வழி குறிப்பு",
+    "startPoint": "தொடக்க புள்ளி",
+    "endPoint": "இறுதி புள்ளி",
+    "waypoint": "வழி புள்ளி"
+  },
+  "user": {
+    "profile": "பயனர் சுயவிவரம்",
+    "preferences": "விருப்பத்தேர்வுகள்",
+    "settings": "அமைப்புகள்",
+    "notifications": "அறிவிப்புகள்",
+    "language": "மொழி",
+    "theme": "தீம்",
+    "mapStyle": "வரைபட பாணி",
+    "updateProfile": "சுயவிவரத்தை புதுப்பி",
+    "changePassword": "கடவுச்சொல்லை மாற்று"
+  },
+  "auth": {
+    "login": "உள்நுழைவு",
+    "logout": "வெளியேறு",
+    "email": "மின்னஞ்சல்",
+    "password": "கடவுச்சொல்",
+    "rememberMe": "என்னை நினைவில் வைத்துக்கொள்",
+    "forgotPassword": "கடவுச்சொல்லை மறந்துவிட்டீர்களா?",
+    "loginSuccess": "உள்நுழைவு வெற்றிகரமாக",
+    "loginError": "உள்நுழைவு தோல்வி",
+    "logoutSuccess": "வெளியேறுதல் வெற்றிகரமாக",
+    "invalidCredentials": "தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்"
+  },
+  "errors": {
+    "general": "ஏதோ தவறு நடந்தது",
+    "network": "நெட்வொர்க் பிழை",
+    "notFound": "கிடைக்கவில்லை",
+    "unauthorized": "அங்கீகரிக்கப்படாத",
+    "forbidden": "அணுகல் மறுக்கப்பட்டது",
+    "validation": "சரிபார்ப்பு பிழை",
+    "serverError": "சர்வர் பிழை"
+  },
+  "messages": {
+    "routeOptimized": "வழி வெற்றிகரமாக மேம்படுத்தப்பட்டது",
+    "routeSaved": "வழி வெற்றிகரமாக சேமிக்கப்பட்டது",
+    "routeDeleted": "வழி வெற்றிகரமாக நீக்கப்பட்டது",
+    "preferencesUpdated": "விருப்பத்தேர்வுகள் வெற்றிகரமாக புதுப்பிக்கப்பட்டன",
+    "dataLoaded": "தரவு வெற்றிகரமாக ஏற்றப்பட்டது"
+  }
+}

@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\dcc\Input.py
+# hypothesis_version: 6.148.8
+
+['Input', '_explicit_args', 'autoComplete', 'autoFocus', 'children', 'className', 'dash_core_components', 'debounce', 'disabled', 'id', 'inputMode', 'list', 'loading_state', 'max', 'maxLength', 'min', 'minLength', 'multiple', 'n_blur', 'n_blur_timestamp', 'n_submit', 'n_submit_timestamp', 'name', 'pattern', 'persisted_props', 'persistence', 'persistence_type', 'placeholder', 'readOnly', 'required', 'selectionDirection', 'selectionEnd', 'selectionStart', 'size', 'spellCheck', 'step', 'style', 'type', 'value']

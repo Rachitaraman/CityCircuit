@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\backend\tensorflow\core.py
+# hypothesis_version: 6.148.8
+
+['VARIABLE_VALUE', 'bool', 'int32', 'int64', 'mean', 'name_scope_stack', 'none', 'only_first_replica', 'scratch_graph', 'sum']

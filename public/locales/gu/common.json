@@ -1,0 +1,140 @@
+{
+  "navigation": {
+    "home": "હોમ",
+    "routes": "રૂટ્સ",
+    "optimization": "અનુકૂલન",
+    "analytics": "વિશ્લેષણ",
+    "profile": "પ્રોફાઇલ",
+    "login": "લોગિન",
+    "logout": "લોગઆઉટ",
+    "dashboard": "ડેશબોર્ડ"
+  },
+  "common": {
+    "loading": "લોડ થઈ રહ્યું છે...",
+    "error": "ભૂલ",
+    "success": "સફળતા",
+    "cancel": "રદ કરો",
+    "save": "સેવ કરો",
+    "delete": "ડિલીટ કરો",
+    "edit": "સંપાદિત કરો",
+    "add": "ઉમેરો",
+    "search": "શોધો",
+    "filter": "ફિલ્ટર",
+    "clear": "સાફ કરો",
+    "submit": "સબમિટ કરો",
+    "back": "પાછળ",
+    "next": "આગળ",
+    "previous": "પહેલાં",
+    "close": "બંધ કરો",
+    "confirm": "પુષ્ટિ કરો",
+    "yes": "હા",
+    "no": "ના"
+  },
+  "language": {
+    "select": "ભાષા પસંદ કરો",
+    "english": "English",
+    "hindi": "हिंदी",
+    "marathi": "मराठी",
+    "gujarati": "ગુજરાતી",
+    "tamil": "தமிழ்"
+  },
+  "theme": {
+    "light": "હલકી",
+    "dark": "ઘેરી",
+    "toggle": "થીમ બદલો"
+  },
+  "routes": {
+    "title": "બસ રૂટ્સ",
+    "search": "રૂટ્સ શોધો",
+    "from": "થી",
+    "to": "સુધી",
+    "departure": "પ્રસ્થાન સમય",
+    "arrival": "આગમન સમય",
+    "duration": "અવધિ",
+    "stops": "સ્ટોપ્સ",
+    "distance": "અંતર",
+    "fare": "ભાડું",
+    "optimize": "રૂટ અનુકૂલિત કરો",
+    "details": "રૂટ વિગતો",
+    "noRoutes": "કોઈ રૂટ મળ્યા નથી",
+    "selectRoute": "એક રૂટ પસંદ કરો",
+    "routeInfo": "રૂટ માહિતી",
+    "estimatedTime": "અંદાજિત મુસાફરી સમય",
+    "optimizationScore": "અનુકૂલન સ્કોર"
+  },
+  "stops": {
+    "title": "બસ સ્ટોપ્સ",
+    "name": "સ્ટોપનું નામ",
+    "address": "સરનામું",
+    "amenities": "સુવિધાઓ",
+    "accessibility": "પહોંચ",
+    "accessible": "વ્હીલચેર સુલભ",
+    "notAccessible": "સુલભ નથી",
+    "passengerCount": "દૈનિક મુસાફરો",
+    "nearbyStops": "નજીકના સ્ટોપ્સ"
+  },
+  "optimization": {
+    "title": "રૂટ અનુકૂલન",
+    "analyze": "રૂટનું વિશ્લેષણ કરો",
+    "suggestions": "અનુકૂલન સૂચનો",
+    "improvements": "સંભવિત સુધારાઓ",
+    "timeReduction": "સમય ઘટાડો",
+    "distanceReduction": "અંતર ઘટાડો",
+    "coverageIncrease": "કવરેજ વધારો",
+    "costSavings": "ખર્ચ બચત",
+    "efficiency": "કાર્યક્ષમતા સ્કોર",
+    "applyOptimization": "અનુકૂલન લાગુ કરો"
+  },
+  "map": {
+    "title": "રૂટ નકશો",
+    "fitToView": "દૃશ્યમાં ફિટ કરો",
+    "showAllRoutes": "બધા રૂટ્સ બતાવો",
+    "mapStyle": "નકશો શૈલી",
+    "default": "ડિફોલ્ટ",
+    "satellite": "સેટેલાઇટ",
+    "terrain": "ભૂપ્રદેશ",
+    "legend": "રૂટ લેજેન્ડ",
+    "startPoint": "શરૂઆતી બિંદુ",
+    "endPoint": "અંતિમ બિંદુ",
+    "waypoint": "માર્ગ બિંદુ"
+  },
+  "user": {
+    "profile": "વપરાશકર્તા પ્રોફાઇલ",
+    "preferences": "પસંદગીઓ",
+    "settings": "સેટિંગ્સ",
+    "notifications": "સૂચનાઓ",
+    "language": "ભાષા",
+    "theme": "થીમ",
+    "mapStyle": "નકશો શૈલી",
+    "updateProfile": "પ્રોફાઇલ અપડેટ કરો",
+    "changePassword": "પાસવર્ડ બદલો"
+  },
+  "auth": {
+    "login": "લોગિન",
+    "logout": "લોગઆઉટ",
+    "email": "ઈમેઇલ",
+    "password": "પાસવર્ડ",
+    "rememberMe": "મને યાદ રાખો",
+    "forgotPassword": "પાસવર્ડ ભૂલી ગયા?",
+    "loginSuccess": "લોગિન સફળ",
+    "loginError": "લોગિન નિષ્ફળ",
+    "logoutSuccess": "લોગઆઉટ સફળ",
+    "invalidCredentials": "અમાન્ય ઈમેઇલ અથવા પાસવર્ડ"
+  },
+  "errors": {
+    "general": "કંઈક ખોટું થયું",
+    "network": "નેટવર્ક ભૂલ",
+    "notFound": "મળ્યું નથી",
+    "unauthorized": "અનધિકૃત",
+    "forbidden": "પ્રવેશ નકારાયો",
+    "validation": "માન્યતા ભૂલ",
+    "serverError": "સર્વર ભૂલ"
+  },
+  "messages": {
+    "routeOptimized": "રૂટ સફળતાપૂર્વક અનુકૂલિત કરવામાં આવ્યો",
+    "routeSaved": "રૂટ સફળતાપૂર્વક સેવ કરવામાં આવ્યો",
+    "routeDeleted": "રૂટ સફળતાપૂર્વક ડિલીટ કરવામાં આવ્યો",
+    "preferencesUpdated": "પસંદગીઓ સફળતાપૂર્વક અપડેટ કરવામાં આવી",
+    "dataLoaded": "ડેટા સફળતાપૂર્વક લોડ કરવામાં આવ્યો"
+  }
+}

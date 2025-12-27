@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\quantizers\quantizers.py
+# hypothesis_version: 6.148.8
+
+[0.0, 0.5, -127, 127, 'axis', 'epsilon', 'float32', 'int8', 'keras.Quantizer', 'output_dtype', 'tensorflow', 'value_range']

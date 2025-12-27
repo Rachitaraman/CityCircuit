@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tensorflow\compiler\xla\service\hlo_pb2.py
+# hypothesis_version: 6.148.8
+
+[b'\x18\x01', b'8\x01', b'\xf8\x01\x01', 105, 2882, 2945, 3245, 3248, 3481, 3484, 3561, 3607, 3609, 3700, 3703, 3795, 3922, 3925, 4013, 4093, 4095, 4167, 4170, 4362, 4454, 4456, 4519, 4522, 5311, 5604, 5606, 5702, 5705, 5885, 5918, 5921, 6038, 6129, 6132, 6441, 6508, 6511, 6647, 6810, 6853, 6855, 6932, 6935, 7186, 7277, 7279, 7405, 7408, 7550, 7552, 7601, 7603, 7704, 7707, 7892, 7895, 8217, 8219, 8302, 8305, 8485, 8487, 8545, 'all_reduce_id', 'instruction_name', 'replica_groups', 'xla.service.hlo_pb2']

@@ -1,0 +1,74 @@
+{
+  "routeOptimizations": 1247,
+  "userSessions": 8934,
+  "averageOptimizationTime": 2.3,
+  "popularRoutes": [
+    {
+      "routeId": "route-001",
+      "routeName": "Downtown Express",
+      "optimizations": 456,
+      "averageRating": 4.2,
+      "totalPassengers": 12450
+    },
+    {
+      "routeId": "route-003",
+      "routeName": "Airport Shuttle",
+      "optimizations": 389,
+      "averageRating": 4.5,
+      "totalPassengers": 8920
+    },
+    {
+      "routeId": "route-002",
+      "routeName": "Suburban Connector",
+      "optimizations": 402,
+      "averageRating": 3.8,
+      "totalPassengers": 15670
+    }
+  ],
+  "systemPerformance": {
+    "averageResponseTime": 180,
+    "errorRate": 0.02,
+    "uptime": 0.999,
+    "peakHours": {
+      "morning": "08:00-10:00",
+      "evening": "17:00-19:00"
+    },
+    "systemLoad": {
+      "cpu": 45,
+      "memory": 62,
+      "disk": 38,
+      "network": 23
+    }
+  },
+  "userEngagement": {
+    "dailyActiveUsers": 2341,
+    "weeklyActiveUsers": 8934,
+    "monthlyActiveUsers": 25670,
+    "averageSessionDuration": 8.5,
+    "bounceRate": 0.15
+  },
+  "routeEfficiency": {
+    "averageDelayMinutes": 3.2,
+    "onTimePerformance": 0.87,
+    "fuelEfficiencyImprovement": 0.15,
+    "passengerSatisfaction": 4.1
+  },
+  "geographicData": {
+    "coverageArea": 450.5,
+    "totalStops": 156,
+    "averageStopDistance": 0.8,
+    "routeDensity": 0.35
+  },
+  "timeSeriesData": {
+    "lastWeek": [
+      { "date": "2024-12-19", "optimizations": 89, "users": 1234 },
+      { "date": "2024-12-20", "optimizations": 95, "users": 1456 },
+      { "date": "2024-12-21", "optimizations": 78, "users": 1123 },
+      { "date": "2024-12-22", "optimizations": 102, "users": 1567 },
+      { "date": "2024-12-23", "optimizations": 87, "users": 1345 },
+      { "date": "2024-12-24", "optimizations": 65, "users": 987 },
+      { "date": "2024-12-25", "optimizations": 45, "users": 678 }
+    ]
+  },
+  "generatedAt": "2024-12-26T10:30:00.000Z"
+}

@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\optree\registry.py
+# hypothesis_version: 6.148.8
+
+['<GLOBAL NAMESPACE>', 'CustomTreeNodeType', 'TREE_PATH_ENTRY_TYPE', '_GetP', '_GetT', '_P', '_T', 'register_pytree_node', 'slots', 'tree_flatten']

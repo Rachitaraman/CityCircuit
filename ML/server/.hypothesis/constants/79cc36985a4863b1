@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\optimizers\loss_scale_optimizer.py
+# hypothesis_version: 6.148.8
+
+[0.0, 2.0, 2000, 'dynamic', 'dynamic_growth_steps', 'dynamic_scale', 'float32', 'initial_scale', 'inner_optimizer', 'int', 'learning_rate', 'none', 'step_counter', 'tensorflow']

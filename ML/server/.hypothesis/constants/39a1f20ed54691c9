@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\layers\core\dense.py
+# hypothesis_version: 6.148.8
+
+['activation', 'amax_history_length', 'autocast', 'bfloat16', 'bias', 'bias_constraint', 'bias_initializer', 'bias_regularizer', 'dtype', 'float32', 'float8', 'float8_e4m3fn', 'float8_e5m2', 'glorot_uniform', 'he_uniform', 'initializer', 'inputs_amax_history', 'inputs_scale', 'int8', 'keras.layers.Dense', 'kernel', 'kernel_amax_history', 'kernel_constraint', 'kernel_initializer', 'kernel_regularizer', 'kernel_scale', 'lora_kernel_a', 'lora_kernel_b', 'lora_rank', 'ones', 'outputs_grad_scale', 'shape', 'trainable', 'units', 'use_bias', 'zeros']

@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\models\base.py
+# hypothesis_version: 6.148.8
+
+[-180, 180, 'Error code', 'Error timestamp', 'Unique identifier', 'east', 'north', 'south', 'west']

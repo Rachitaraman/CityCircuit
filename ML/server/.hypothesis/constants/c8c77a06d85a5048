@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\dcc\Geolocation.py
+# hypothesis_version: 6.148.8
+
+['Geolocation', '_explicit_args', 'children', 'dash_core_components', 'high_accuracy', 'id', 'local_date', 'maximum_age', 'position', 'position_error', 'show_alert', 'timeout', 'timestamp', 'update_now']

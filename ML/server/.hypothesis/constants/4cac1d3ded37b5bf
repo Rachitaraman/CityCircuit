@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\dcc\Graph.py
+# hypothesis_version: 6.148.8
+
+['Graph', '_explicit_args', 'animate', 'animation_options', 'children', 'className', 'clear_on_unhover', 'clickAnnotationData', 'clickData', 'config', 'dash_core_components', 'extendData', 'figure', 'hoverData', 'id', 'loading_state', 'mathjax', 'prependData', 'relayoutData', 'responsive', 'restyleData', 'selectedData', 'style']

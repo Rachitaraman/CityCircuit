@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\callbacks\tensorboard.py
+# hypothesis_version: 6.148.8
+
+[b'1', 1.0, ',', '/histogram', '/image', ':', 'Functional', 'Sequential', '_', '_vs_iterations', 'batch', 'batch_', 'batch_%d', 'channels_last', 'epoch', 'epoch_', 'evaluation_', 'float32', 'function_spec', 'graph_keras_model', 'iterations', 'jax', 'keras', 'learning_rate', 'logs', 'steps_per_second', 'tensorflow', 'train', 'val', 'val_', 'validation', 'w']

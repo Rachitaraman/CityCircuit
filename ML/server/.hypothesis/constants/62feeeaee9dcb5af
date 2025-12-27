@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\utils\_tags.py
+# hypothesis_version: 6.148.8
+
+['1darray', '1dlabels', '2darray', '2dlabels', '3darray', 'X_types', '__sklearn_tags__', '_estimator_type', '_get_tags', '_more_tags', '_skip_test', 'allow_nan', 'array_api_support', 'binary_only', 'categorical', 'classifier', 'dict', 'fit_transform', 'float64', 'multilabel', 'multioutput', 'multioutput_only', 'no_validation', 'non_deterministic', 'pairwise', 'poor_score', 'preserves_dtype', 'regressor', 'requires_fit', 'requires_positive_X', 'requires_positive_y', 'requires_y', 'sparse', 'stateless', 'string', 'transform']

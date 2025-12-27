@@ -1,0 +1,140 @@
+{
+  "navigation": {
+    "home": "होम",
+    "routes": "मार्ग",
+    "optimization": "अनुकूलन",
+    "analytics": "विश्लेषण",
+    "profile": "प्रोफाइल",
+    "login": "लॉगिन",
+    "logout": "लॉगआउट",
+    "dashboard": "डॅशबोर्ड"
+  },
+  "common": {
+    "loading": "लोड होत आहे...",
+    "error": "त्रुटी",
+    "success": "यश",
+    "cancel": "रद्द करा",
+    "save": "जतन करा",
+    "delete": "हटवा",
+    "edit": "संपादित करा",
+    "add": "जोडा",
+    "search": "शोधा",
+    "filter": "फिल्टर",
+    "clear": "साफ करा",
+    "submit": "सबमिट करा",
+    "back": "मागे",
+    "next": "पुढे",
+    "previous": "मागील",
+    "close": "बंद करा",
+    "confirm": "पुष्टी करा",
+    "yes": "होय",
+    "no": "नाही"
+  },
+  "language": {
+    "select": "भाषा निवडा",
+    "english": "English",
+    "hindi": "हिंदी",
+    "marathi": "मराठी",
+    "gujarati": "ગુજરાતી",
+    "tamil": "தமிழ்"
+  },
+  "theme": {
+    "light": "हलका",
+    "dark": "गडद",
+    "toggle": "थीम बदला"
+  },
+  "routes": {
+    "title": "बस मार्ग",
+    "search": "मार्ग शोधा",
+    "from": "पासून",
+    "to": "पर्यंत",
+    "departure": "प्रस्थान वेळ",
+    "arrival": "आगमन वेळ",
+    "duration": "कालावधी",
+    "stops": "थांबे",
+    "distance": "अंतर",
+    "fare": "भाडे",
+    "optimize": "मार्ग अनुकूलित करा",
+    "details": "मार्ग तपशील",
+    "noRoutes": "कोणते मार्ग सापडले नाहीत",
+    "selectRoute": "एक मार्ग निवडा",
+    "routeInfo": "मार्ग माहिती",
+    "estimatedTime": "अंदाजे प्रवास वेळ",
+    "optimizationScore": "अनुकूलन स्कोअर"
+  },
+  "stops": {
+    "title": "बस थांबे",
+    "name": "थांब्याचे नाव",
+    "address": "पत्ता",
+    "amenities": "सुविधा",
+    "accessibility": "प्रवेशयोग्यता",
+    "accessible": "व्हीलचेअर प्रवेशयोग्य",
+    "notAccessible": "प्रवेशयोग्य नाही",
+    "passengerCount": "दैनिक प्रवासी",
+    "nearbyStops": "जवळचे थांबे"
+  },
+  "optimization": {
+    "title": "मार्ग अनुकूलन",
+    "analyze": "मार्गाचे विश्लेषण करा",
+    "suggestions": "अनुकूलन सूचना",
+    "improvements": "संभाव्य सुधारणा",
+    "timeReduction": "वेळ कमी करणे",
+    "distanceReduction": "अंतर कमी करणे",
+    "coverageIncrease": "कव्हरेज वाढ",
+    "costSavings": "खर्च बचत",
+    "efficiency": "कार्यक्षमता स्कोअर",
+    "applyOptimization": "अनुकूलन लागू करा"
+  },
+  "map": {
+    "title": "मार्ग नकाशा",
+    "fitToView": "दृश्यात बसवा",
+    "showAllRoutes": "सर्व मार्ग दाखवा",
+    "mapStyle": "नकाशा शैली",
+    "default": "डिफॉल्ट",
+    "satellite": "उपग्रह",
+    "terrain": "भूप्रदेश",
+    "legend": "मार्ग लेजेंड",
+    "startPoint": "प्रारंभ बिंदू",
+    "endPoint": "अंतिम बिंदू",
+    "waypoint": "मार्ग बिंदू"
+  },
+  "user": {
+    "profile": "वापरकर्ता प्रोफाइल",
+    "preferences": "प्राधान्ये",
+    "settings": "सेटिंग्ज",
+    "notifications": "सूचना",
+    "language": "भाषा",
+    "theme": "थीम",
+    "mapStyle": "नकाशा शैली",
+    "updateProfile": "प्रोफाइल अपडेट करा",
+    "changePassword": "पासवर्ड बदला"
+  },
+  "auth": {
+    "login": "लॉगिन",
+    "logout": "लॉगआउट",
+    "email": "ईमेल",
+    "password": "पासवर्ड",
+    "rememberMe": "मला लक्षात ठेवा",
+    "forgotPassword": "पासवर्ड विसरलात?",
+    "loginSuccess": "लॉगिन यशस्वी",
+    "loginError": "लॉगिन अयशस्वी",
+    "logoutSuccess": "लॉगआउट यशस्वी",
+    "invalidCredentials": "अवैध ईमेल किंवा पासवर्ड"
+  },
+  "errors": {
+    "general": "काहीतरी चूक झाली",
+    "network": "नेटवर्क त्रुटी",
+    "notFound": "सापडले नाही",
+    "unauthorized": "अनधिकृत",
+    "forbidden": "प्रवेश नाकारला",
+    "validation": "प्रमाणीकरण त्रुटी",
+    "serverError": "सर्व्हर त्रुटी"
+  },
+  "messages": {
+    "routeOptimized": "मार्ग यशस्वीरित्या अनुकूलित केला गेला",
+    "routeSaved": "मार्ग यशस्वीरित्या जतन केला गेला",
+    "routeDeleted": "मार्ग यशस्वीरित्या हटवला गेला",
+    "preferencesUpdated": "प्राधान्ये यशस्वीरित्या अपडेट केली गेली",
+    "dataLoaded": "डेटा यशस्वीरित्या लोड केला गेला"
+  }
+}

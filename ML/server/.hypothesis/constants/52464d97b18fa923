@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\keras\src\applications\densenet.py
+# hypothesis_version: 6.148.8
+
+[1.001e-05, 0.5, 224, 1000, '_0_bn', '_0_relu', '_1_bn', '_1_conv', '_1_relu', '_2_conv', '__doc__', '_block', '_bn', '_concat', '_conv', '_pool', '_relu', 'avg', 'avg_pool', 'bn', 'channels_first', 'channels_last', 'conv1_bn', 'conv1_conv', 'conv1_relu', 'conv2', 'conv3', 'conv4', 'conv5', 'densenet', 'densenet121', 'densenet169', 'densenet201', 'imagenet', 'max', 'max_pool', 'models', 'pool1', 'pool2', 'pool3', 'pool4', 'predictions', 'relu', 'same', 'softmax', 'torch']

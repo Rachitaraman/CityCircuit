@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\algorithms\result_generator.py
+# hypothesis_version: 6.148.8
+
+[-0.1, 0.0, 0.01, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.5, 0.6, 1.0, 1.1, 10.0, 20.0, 25.0, 30.0, 40.0, 50.0, 60.0, 100.0, 35000.0, 100, 1000, 6371, '18-25', '25-64', '65+', 'accessibility', 'audio_announcements', 'average_score', 'best_score', 'cost_effectiveness', 'cost_savings', 'distance_reduction', 'environmental', 'environmental_impact', 'error', 'generated_at', 'income', 'insights', 'median_score', 'metrics', 'overall_score', 'passenger_coverage', 'rank', 'ranking_criteria', 'route_id', 'route_name', 'score', 'statistics', 'tactile_paving', 'time_efficiency', 'time_improvement', 'top_routes', 'total_routes', 'worst_score']

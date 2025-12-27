@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\database\models.py
+# hypothesis_version: 6.148.8
+
+[0.0, 100, 200, 255, 500, 'BusStop', 'DensityPoint', 'OptimizationResult', 'Route', 'all, delete-orphan', 'bus_stop_id', 'bus_stops', 'bus_stops.id', 'created_at', 'density_points', 'east_bound', 'email', 'generated_at', 'idx_bus_stops_name', 'idx_routes_active', 'idx_routes_operator', 'idx_users_email', 'idx_users_role', 'is_active', 'latitude', 'longitude', 'name', 'north_bound', 'operator_id', 'optimization_results', 'original_route', 'original_route_id', 'population', 'population_data', 'region', 'role', 'route_id', 'route_stops', 'routes', 'routes.id', 'south_bound', 'stop_order', 'stops', 'users', 'west_bound']

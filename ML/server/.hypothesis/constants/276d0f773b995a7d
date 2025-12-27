@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\database\config.py
+# hypothesis_version: 6.148.8
+
+[3600, 5432, '10', '20', '30', '3600', '5432', 'DB_ECHO', 'DB_HOST', 'DB_MAX_OVERFLOW', 'DB_NAME', 'DB_PASSWORD', 'DB_POOL_RECYCLE', 'DB_POOL_SIZE', 'DB_POOL_TIMEOUT', 'DB_PORT', 'DB_TYPE', 'DB_USER', 'DatabaseConfig', 'citycircuit', 'citycircuit_password', 'citycircuit_user', 'false', 'localhost', 'postgresql', 'sqlite', 'true']

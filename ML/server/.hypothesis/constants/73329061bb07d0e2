@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\jedi\api\refactoring\__init__.py
+# hypothesis_version: 6.148.8
+
+['(', ')', '.', ';', '<%s: %s>', '=', 'Cannot inline a %s', '__init__.py', '__init__.pyi', 'annassign', 'class', 'expr_stmt', 'function', 'module', 'namespace', 'newline', 'testlist_star_expr', 'trailer', 'w']

@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\algorithms\population_analyzer.py
+# hypothesis_version: 6.148.8
+
+[0.0, 0.2, 0.5, 1.0, 2.0, 10.0, 15.0, 30.0, 50.0, 100.0, 1000.0, 111, 500, 2000, 6371, 20000, 30000, 60000, 80000, '25-64', 'age_groups', 'average_income', 'combined_population', 'coordinates', 'demographic_profile', 'description', 'destination', 'distance_km', 'dominant_age_group', 'economic_indicators', 'high', 'income', 'inf', 'latitude', 'local_density', 'location', 'longitude', 'low', 'medium', 'moderate', 'new_route', 'new_stop', 'origin', 'population', 'population_served', 'priority', 'priority_score', 'severity', 'total_data_points', 'transport_dependency', 'transport_notes', 'type']

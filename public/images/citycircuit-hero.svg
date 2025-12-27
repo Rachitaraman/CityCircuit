@@ -1,0 +1,162 @@
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Hero Gradient Background -->
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.1" />
+      <stop offset="30%" style="stop-color:#8b5cf6;stop-opacity:0.05" />
+      <stop offset="70%" style="stop-color:#a855f7;stop-opacity:0.08" />
+      <stop offset="100%" style="stop-color:#06d6a0;stop-opacity:0.1" />
+    </linearGradient>
+    
+    <!-- Primary Gradient -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Secondary Gradient -->
+    <linearGradient id="secondaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06d6a0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Building Gradient -->
+    <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#heroGradient)"/>
+  
+  <!-- City Skyline -->
+  <g opacity="0.7">
+    <!-- Buildings -->
+    <rect x="50" y="250" width="40" height="120" fill="url(#buildingGrad)"/>
+    <rect x="100" y="200" width="35" height="170" fill="url(#buildingGrad)"/>
+    <rect x="145" y="230" width="45" height="140" fill="url(#buildingGrad)"/>
+    <rect x="200" y="180" width="50" height="190" fill="url(#buildingGrad)"/>
+    <rect x="260" y="220" width="40" height="150" fill="url(#buildingGrad)"/>
+    <rect x="310" y="160" width="55" height="210" fill="url(#buildingGrad)"/>
+    <rect x="375" y="240" width="35" height="130" fill="url(#buildingGrad)"/>
+    <rect x="420" y="190" width="45" height="180" fill="url(#buildingGrad)"/>
+    <rect x="475" y="210" width="40" height="160" fill="url(#buildingGrad)"/>
+    <rect x="525" y="170" width="50" height="200" fill="url(#buildingGrad)"/>
+    <rect x="585" y="240" width="35" height="130" fill="url(#buildingGrad)"/>
+    <rect x="630" y="200" width="45" height="170" fill="url(#buildingGrad)"/>
+    <rect x="685" y="220" width="40" height="150" fill="url(#buildingGrad)"/>
+    
+    <!-- Building Windows -->
+    <g opacity="0.6">
+      <rect x="55" y="260" width="6" height="8" fill="url(#secondaryGrad)"/>
+      <rect x="65" y="260" width="6" height="8" fill="url(#secondaryGrad)"/>
+      <rect x="75" y="260" width="6" height="8" fill="url(#secondaryGrad)"/>
+      <rect x="55" y="280" width="6" height="8" fill="url(#secondaryGrad)"/>
+      <rect x="75" y="280" width="6" height="8" fill="url(#secondaryGrad)"/>
+      
+      <rect x="105" y="210" width="6" height="8" fill="url(#primaryGrad)"/>
+      <rect x="115" y="210" width="6" height="8" fill="url(#primaryGrad)"/>
+      <rect x="125" y="210" width="6" height="8" fill="url(#primaryGrad)"/>
+      <rect x="105" y="230" width="6" height="8" fill="url(#primaryGrad)"/>
+      <rect x="125" y="230" width="6" height="8" fill="url(#primaryGrad)"/>
+      
+      <rect x="315" y="170" width="8" height="10" fill="url(#secondaryGrad)"/>
+      <rect x="330" y="170" width="8" height="10" fill="url(#secondaryGrad)"/>
+      <rect x="345" y="170" width="8" height="10" fill="url(#secondaryGrad)"/>
+      <rect x="315" y="190" width="8" height="10" fill="url(#secondaryGrad)"/>
+      <rect x="345" y="190" width="8" height="10" fill="url(#secondaryGrad)"/>
+    </g>
+  </g>
+  
+  <!-- Route Network Visualization -->
+  <g opacity="0.8">
+    <!-- Main Route Lines -->
+    <path d="M100 320 Q200 280 300 320 T500 320 Q600 300 700 320" 
+          stroke="url(#primaryGrad)" stroke-width="3" fill="none"/>
+    <path d="M150 340 Q250 300 350 340 T550 340 Q650 320 750 340" 
+          stroke="url(#secondaryGrad)" stroke-width="2.5" fill="none"/>
+    <path d="M80 300 Q180 260 280 300 T480 300 Q580 280 680 300" 
+          stroke="url(#primaryGrad)" stroke-width="2" fill="none" opacity="0.7"/>
+    
+    <!-- Route Nodes/Stops -->
+    <circle cx="150" cy="310" r="4" fill="url(#primaryGrad)"/>
+    <circle cx="250" cy="295" r="4" fill="url(#secondaryGrad)"/>
+    <circle cx="350" cy="310" r="4" fill="url(#primaryGrad)"/>
+    <circle cx="450" cy="305" r="4" fill="url(#secondaryGrad)"/>
+    <circle cx="550" cy="315" r="4" fill="url(#primaryGrad)"/>
+    <circle cx="650" cy="308" r="4" fill="url(#secondaryGrad)"/>
+    
+    <!-- Node Glow Effects -->
+    <circle cx="150" cy="310" r="8" fill="url(#primaryGrad)" opacity="0.3"/>
+    <circle cx="350" cy="310" r="8" fill="url(#primaryGrad)" opacity="0.3"/>
+    <circle cx="550" cy="315" r="8" fill="url(#primaryGrad)" opacity="0.3"/>
+    <circle cx="250" cy="295" r="8" fill="url(#secondaryGrad)" opacity="0.3"/>
+    <circle cx="450" cy="305" r="8" fill="url(#secondaryGrad)" opacity="0.3"/>
+    <circle cx="650" cy="308" r="8" fill="url(#secondaryGrad)" opacity="0.3"/>
+  </g>
+  
+  <!-- Buses on Routes -->
+  <g>
+    <!-- Bus 1 -->
+    <g transform="translate(200, 305)">
+      <rect x="0" y="0" width="20" height="12" rx="2" fill="url(#primaryGrad)"/>
+      <rect x="2" y="2" width="4" height="3" rx="0.5" fill="white" opacity="0.9"/>
+      <rect x="7" y="2" width="4" height="3" rx="0.5" fill="white" opacity="0.9"/>
+      <rect x="14" y="2" width="4" height="3" rx="0.5" fill="white" opacity="0.9"/>
+      <circle cx="5" cy="14" r="1.5" fill="#1e293b"/>
+      <circle cx="15" cy="14" r="1.5" fill="#1e293b"/>
+    </g>
+    
+    <!-- Bus 2 -->
+    <g transform="translate(400, 325)">
+      <rect x="0" y="0" width="20" height="12" rx="2" fill="url(#secondaryGrad)"/>
+      <rect x="2" y="2" width="4" height="3" rx="0.5" fill="white" opacity="0.9"/>
+      <rect x="7" y="2" width="4" height="3" rx="0.5" fill="white" opacity="0.9"/>
+      <rect x="14" y="2" width="4" height="3" rx="0.5" fill="white" opacity="0.9"/>
+      <circle cx="5" cy="14" r="1.5" fill="#1e293b"/>
+      <circle cx="15" cy="14" r="1.5" fill="#1e293b"/>
+    </g>
+    
+    <!-- Bus 3 -->
+    <g transform="translate(600, 290)">
+      <rect x="0" y="0" width="20" height="12" rx="2" fill="url(#primaryGrad)"/>
+      <rect x="2" y="2" width="4" height="3" rx="0.5" fill="white" opacity="0.9"/>
+      <rect x="7" y="2" width="4" height="3" rx="0.5" fill="white" opacity="0.9"/>
+      <rect x="14" y="2" width="4" height="3" rx="0.5" fill="white" opacity="0.9"/>
+      <circle cx="5" cy="14" r="1.5" fill="#1e293b"/>
+      <circle cx="15" cy="14" r="1.5" fill="#1e293b"/>
+    </g>
+  </g>
+  
+  <!-- Circuit Network Overlay -->
+  <g opacity="0.4">
+    <!-- Data Flow Lines -->
+    <path d="M50 100 Q150 80 250 100 T450 100 Q550 80 650 100 L750 100" 
+          stroke="url(#secondaryGrad)" stroke-width="1.5" fill="none"/>
+    <path d="M100 120 Q200 100 300 120 T500 120 Q600 100 700 120" 
+          stroke="url(#primaryGrad)" stroke-width="1" fill="none"/>
+    
+    <!-- Data Nodes -->
+    <circle cx="150" cy="95" r="2" fill="url(#secondaryGrad)"/>
+    <circle cx="350" cy="105" r="2" fill="url(#primaryGrad)"/>
+    <circle cx="550" cy="95" r="2" fill="url(#secondaryGrad)"/>
+    <circle cx="200" cy="115" r="1.5" fill="url(#primaryGrad)"/>
+    <circle cx="400" cy="125" r="1.5" fill="url(#secondaryGrad)"/>
+    <circle cx="600" cy="115" r="1.5" fill="url(#primaryGrad)"/>
+  </g>
+  
+  <!-- Title Area -->
+  <g transform="translate(50, 50)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="700" fill="url(#primaryGrad)">CityCircuit</text>
+    <text x="0" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="400" fill="#64748b">Smart Bus Route Optimization</text>
+  </g>
+  
+  <!-- Floating Elements -->
+  <g opacity="0.6">
+    <circle cx="700" cy="80" r="3" fill="url(#secondaryGrad)"/>
+    <circle cx="720" cy="60" r="2" fill="url(#primaryGrad)"/>
+    <circle cx="680" cy="100" r="2.5" fill="url(#secondaryGrad)"/>
+    <circle cx="750" cy="120" r="2" fill="url(#primaryGrad)"/>
+  </g>
+</svg>

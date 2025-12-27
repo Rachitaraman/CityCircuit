@@ -1,0 +1,72 @@
+[
+  {
+    "id": "stop-1",
+    "name": "Central Station",
+    "latitude": 40.7128,
+    "longitude": -74.0060,
+    "address": "123 Main St",
+    "amenities": ["shelter", "bench", "schedule_display"],
+    "accessibility": {
+      "wheelchairAccessible": true,
+      "audioAnnouncements": true,
+      "brailleSignage": true
+    },
+    "routes": ["fallback-route-1", "fallback-route-2"]
+  },
+  {
+    "id": "stop-2",
+    "name": "City Hall",
+    "latitude": 40.7130,
+    "longitude": -74.0065,
+    "address": "456 Government Ave",
+    "amenities": ["shelter", "bench"],
+    "accessibility": {
+      "wheelchairAccessible": true,
+      "audioAnnouncements": false,
+      "brailleSignage": true
+    },
+    "routes": ["fallback-route-1"]
+  },
+  {
+    "id": "stop-3",
+    "name": "Shopping District",
+    "latitude": 40.7125,
+    "longitude": -74.0055,
+    "address": "789 Commerce St",
+    "amenities": ["bench", "schedule_display"],
+    "accessibility": {
+      "wheelchairAccessible": true,
+      "audioAnnouncements": true,
+      "brailleSignage": false
+    },
+    "routes": ["fallback-route-1"]
+  },
+  {
+    "id": "stop-4",
+    "name": "University Campus",
+    "latitude": 40.7140,
+    "longitude": -74.0070,
+    "address": "100 University Blvd",
+    "amenities": ["shelter", "bench", "schedule_display", "wifi"],
+    "accessibility": {
+      "wheelchairAccessible": true,
+      "audioAnnouncements": true,
+      "brailleSignage": true
+    },
+    "routes": ["fallback-route-2"]
+  },
+  {
+    "id": "stop-5",
+    "name": "Student Housing",
+    "latitude": 40.7135,
+    "longitude": -74.0068,
+    "address": "200 Student Way",
+    "amenities": ["bench"],
+    "accessibility": {
+      "wheelchairAccessible": true,
+      "audioAnnouncements": false,
+      "brailleSignage": false
+    },
+    "routes": ["fallback-route-2"]
+  }
+]

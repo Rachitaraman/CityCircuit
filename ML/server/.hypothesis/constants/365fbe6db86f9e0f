@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\models\serialization.py
+# hypothesis_version: 6.148.8
+
+['Feature', 'FeatureCollection', 'LineString', 'Route', 'T', 'arrival_time', 'coordinates', 'departure_time', 'description', 'dict', 'features', 'geometry', 'is_active', 'json', 'operator_id', 'optimization_score', 'pickle', 'properties', 'route_color', 'route_id', 'route_long_name', 'route_name', 'route_short_name', 'route_text_color', 'route_type', 'routes', 'stop_count', 'stop_id', 'stop_lat', 'stop_lon', 'stop_name', 'stop_sequence', 'stop_times', 'stops', 'trip_id', 'type', 'wheelchair_boarding']

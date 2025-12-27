@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\narwhals\_compliant\when_then.py
+# hypothesis_version: 6.148.8
+
+['CompliantThen', 'CompliantWhen', 'EagerWhen', 'ExprT', 'FrameT', 'LazyExprT', 'LazyWhen', 'SeriesT', '_alias_output_names', 'literal', 'whenotherwise', 'whenthen']

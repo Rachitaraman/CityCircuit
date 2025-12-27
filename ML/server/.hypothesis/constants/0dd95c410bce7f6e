@@ -1,0 +1,4 @@
+# file: C:\Users\91843\OneDrive\Desktop\Projects\CityCircuit\ML\server\database\connection.py
+# hypothesis_version: 6.148.8
+
+['-c timezone=utc', 'SELECT 1', 'check_same_thread', 'options', 'sqlite']

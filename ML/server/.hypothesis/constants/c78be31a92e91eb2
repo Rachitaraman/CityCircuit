@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tensorflow\python\distribute\experimental\dtensor_strategy_extended.py
+# hypothesis_version: 6.148.8
+
+['colocate_with', 'dtype', 'expected_shape', 'initial_value', 'use_resource']

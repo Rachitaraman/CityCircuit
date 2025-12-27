@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tensorflow\python\keras\engine\input_layer.py
+# hypothesis_version: 6.148.8
+
+['(input_)shape', '_', 'batch_input_shape', 'batch_shape', 'batch_size', 'dtype', 'input', 'input_shape', 'input_tensor', 'name', 'ragged', 'sparse', 'type_spec']

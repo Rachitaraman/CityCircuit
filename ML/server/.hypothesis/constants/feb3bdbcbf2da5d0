@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\scipy\__config__.py
+# hypothesis_version: 6.148.8
+
+['/c/opt/64/include', '/c/opt/64/lib', '0.15.0', '0.3.27', '10.3.0', '2.12.0', '3.0.10', '3.12', 'Build Dependencies', 'Compilers', 'False', 'Machine Information', 'Python Information', 'True', 'args', 'blas', 'build', 'c', 'c++', 'cc', 'commands', 'config-tool', 'cpu', 'cross-compiled', 'cython', 'detection method', 'dicts', 'endian', 'false', 'family', 'fortran', 'found', 'gcc', 'gfortran', 'host', 'include directory', 'lapack', 'ld.bfd', 'lib directory', 'linker', 'linker args', 'little', 'name', 'openblas', 'path', 'pc file directory', 'pkgconfig', 'pybind11', 'pythran', 'show', 'stdout', 'system', 'unknown', 'version', 'windows', 'x86_64']

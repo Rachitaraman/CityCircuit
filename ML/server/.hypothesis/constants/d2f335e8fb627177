@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tensorflow\python\framework\auto_control_deps.py
+# hypothesis_version: 6.148.8
+
+['AllToAll', 'CollectiveBcastRecv', 'CollectiveBcastSend', 'CollectiveGather', 'CollectivePermute', 'CollectiveReduce', 'CrossReplicaSum', 'CudnnRNN', 'CudnnRNNBackprop', 'CudnnRNNBackpropV2', 'CudnnRNNBackpropV3', 'CudnnRNNV2', 'CudnnRNNV3', 'Identity', 'InfeedEnqueue', 'InfeedEnqueueTuple', 'Merge', 'Multinomial', 'NcclAllReduce', 'NoOp', 'RandomGamma', 'RandomGammaGrad', 'RandomPoisson', 'RandomPoissonV2', 'RandomShuffle', 'RandomStandardNormal', 'RandomUniform', 'RandomUniformInt', 'Recv', 'RestoreV2', 'SaveV2', 'Switch', 'TruncatedNormal', 'artificial_merge', 'outer_graph', 'read-only', 'read-write']

@@ -1,0 +1,4 @@
+# file: C:\Users\91843\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\dash\dcc\Textarea.py
+# hypothesis_version: 6.148.8
+
+['Textarea', '_explicit_args', 'accessKey', 'autoFocus', 'children', 'className', 'cols', 'contentEditable', 'contextMenu', 'dash_core_components', 'dir', 'disabled', 'draggable', 'form', 'hidden', 'id', 'lang', 'loading_state', 'maxLength', 'minLength', 'n_blur', 'n_blur_timestamp', 'n_clicks', 'n_clicks_timestamp', 'name', 'persisted_props', 'persistence', 'persistence_type', 'placeholder', 'readOnly', 'required', 'rows', 'spellCheck', 'style', 'tabIndex', 'title', 'value', 'wrap']
