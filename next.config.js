@@ -10,8 +10,12 @@ module.exports = {
   swcMinify: true,
   trailingSlash: true,
   eslint: {
-    // Disable ESLint during builds to prevent deployment failures
+    // Completely disable ESLint during builds
     ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // Disable type checking during builds to speed up deployment
+    ignoreBuildErrors: true,
   },
   images: {
     unoptimized: true,

@@ -395,7 +395,7 @@ export default function Home() {
                 onDismiss={() => setShowAlert(false)}
                 className="mb-6"
               >
-                You're now signed in! Click "Search Your Ride" to find optimized bus routes, or visit your dashboard to access advanced features like route analytics and optimization tools.
+                You&apos;re now signed in! Click &quot;Search Your Ride&quot; to find optimized bus routes, or visit your dashboard to access advanced features like route analytics and optimization tools.
               </Alert>
             )}
 
@@ -405,7 +405,7 @@ export default function Home() {
                 title="Get Started with CityCircuit"
                 className="mb-6"
               >
-                Sign in with your phone number to access route search, optimization features, and personalized recommendations for Mumbai's bus network.
+                Sign in with your phone number to access route search, optimization features, and personalized recommendations for Mumbai&apos;s bus network.
               </Alert>
             )}
           </motion.div>

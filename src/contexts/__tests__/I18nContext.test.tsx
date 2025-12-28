@@ -1,8 +1,19 @@
-// Temporarily disabled for deployment
-// This test file has some ESLint issues that need to be resolved
-// TODO: Fix TestComponent scope issue and re-enable
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
+import fc from 'fast-check';
+import { I18nProvider, useI18n } from '../I18nContext';
 
-export {};
+// Mock Next.js router
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
+}));
+
+// Mock next-i18next
+jest.mock('next-i18next', () => ({
+  useTranslation: jest.fn(),
+}));
 
 describe('Internationalization Property Tests', () => {
   const mockPush = jest.fn();

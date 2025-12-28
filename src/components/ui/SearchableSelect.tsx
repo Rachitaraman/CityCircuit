@@ -178,6 +178,7 @@ const SearchableSelect = React.forwardRef<HTMLInputElement, SearchableSelectProp
               }
               aria-expanded={isOpen}
               aria-haspopup="listbox"
+              aria-controls={`${selectId}-listbox`}
               role="combobox"
               {...props}
             />
@@ -206,7 +207,7 @@ const SearchableSelect = React.forwardRef<HTMLInputElement, SearchableSelectProp
                   No options found
                 </div>
               ) : (
-                <ul role="listbox" className="py-1">
+                <ul id={`${selectId}-listbox`} role="listbox" className="py-1">
                   {filteredOptions.map((option) => (
                     <li
                       key={option.value}

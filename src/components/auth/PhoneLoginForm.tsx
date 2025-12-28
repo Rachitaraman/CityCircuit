@@ -192,7 +192,7 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
 
       <div className="mt-6 text-center">
         <p className="text-sm text-neutral-600">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <button
             type="button"
             onClick={onSwitchToRegister}

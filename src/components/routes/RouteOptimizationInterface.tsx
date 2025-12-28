@@ -131,7 +131,7 @@ const RouteOptimizationInterface: React.FC<RouteOptimizationInterfaceProps> = ({
                 Route Optimization
               </CardTitle>
               <p className="text-sm text-neutral-600 mt-1">
-                Optimize "{route.name}" using AI-powered analysis
+                Optimize &quot;{route.name}&quot; using AI-powered analysis
               </p>
             </div>
             {onClose && (

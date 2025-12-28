@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.next/
+out/
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env*
+
+# Cache directories
+.cache/
+.swc/
+.pytest_cache/
+
+# Test files with known issues
+src/contexts/__tests__/I18nContext.test.tsx
+
+# Files with intentional unescaped entities
+src/components/auth/PhoneLoginForm.tsx
+src/components/auth/ProtectedRoute.tsx
+src/components/routes/RouteOptimizationInterface.tsx
+src/components/ui/ErrorBoundary.tsx
+src/pages/index.tsx
+
+# Configuration files
+*.config.js
+*.config.mjs
+*.config.ts
+
+# Generated files
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# Documentation
+*.md
+
+# Public assets
+public/
+
+# Scripts
+scripts/

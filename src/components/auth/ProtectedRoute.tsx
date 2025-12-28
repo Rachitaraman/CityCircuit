@@ -90,7 +90,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
               Access Denied
             </h3>
             <p className="text-neutral-600 mb-2">
-              You don't have permission to access this content.
+              You don&apos;t have permission to access this content.
             </p>
             <p className="text-sm text-neutral-500 mb-4">
               Required role: {allowedRoles.join(' or ')}<br />
