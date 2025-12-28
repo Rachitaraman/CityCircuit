@@ -1,5 +1,5 @@
-// OTP Service for phone verification
-// In production, integrate with SMS service like Twilio, AWS SNS, etc.
+// OTP Service for phone verification with Twilio SMS
+import twilio from 'twilio';
 
 interface OTPData {
   phoneNumber: string;
@@ -10,6 +10,11 @@ interface OTPData {
 
 // In-memory OTP storage (use Redis in production)
 const otpStorage = new Map<string, OTPData>();
+
+// Initialize Twilio client
+const twilioClient = process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN 
+  ? twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
+  : null;
 
 export const otpService = {
   // Generate and send OTP
@@ -28,15 +33,45 @@ export const otpService = {
         attempts: 0
       });
 
-      // In production, send SMS here
-      console.log(`📱 OTP for ${phoneNumber}: ${otp}`);
-      
-      return {
-        success: true,
-        message: 'OTP sent successfully',
-        otp // Remove this in production!
-      };
+      // Send SMS via Twilio (production) or console (development)
+      if (twilioClient && process.env.TWILIO_PHONE_NUMBER && process.env.NODE_ENV === 'production') {
+        try {
+          await twilioClient.messages.create({
+            body: `Your CityCircuit verification code is: ${otp}. Valid for 5 minutes.`,
+            from: process.env.TWILIO_PHONE_NUMBER,
+            to: phoneNumber
+          });
+          
+          console.log(`📱 SMS sent to ${phoneNumber}`);
+          
+          return {
+            success: true,
+            message: 'OTP sent to your phone number'
+          };
+        } catch (twilioError) {
+          console.error('Twilio SMS error:', twilioError);
+          
+          // Fallback to console in case of SMS failure
+          console.log(`📱 SMS FAILED - OTP for ${phoneNumber}: ${otp}`);
+          
+          return {
+            success: true,
+            message: 'OTP sent (SMS service temporarily unavailable - check console)',
+            otp // Include OTP for development fallback
+          };
+        }
+      } else {
+        // Development mode - show OTP in console
+        console.log(`📱 DEV MODE - OTP for ${phoneNumber}: ${otp}`);
+        
+        return {
+          success: true,
+          message: 'OTP sent successfully (development mode)',
+          otp // Include OTP for development
+        };
+      }
     } catch (error) {
+      console.error('OTP service error:', error);
       return {
         success: false,
         message: 'Failed to send OTP'
