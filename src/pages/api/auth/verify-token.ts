@@ -1,25 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-// Mock user database
-const users = [
-  {
-    id: '1',
-    phoneNumber: '+919876543210',
-    name: 'Test User',
-    role: 'passenger',
-    isActive: true,
-    preferences: {
-      language: 'en',
-      notifications: true,
-      theme: 'light',
-      preferredRoutes: [],
-      accessibilityNeeds: []
-    },
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    lastLoginAt: new Date().toISOString()
-  }
-];
+import { userStorage } from '../../lib/userStorage';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -39,7 +19,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   // Extract user ID from token
   const userId = token.split('_')[1];
-  const user = users.find(u => u.id === userId);
+  const user = userStorage.findById(userId);
 
   if (!user) {
     return res.status(401).json({ success: false, message: 'Invalid token' });

@@ -1,25 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-// Mock user database (in production, use a real database)
-let users = [
-  {
-    id: '1',
-    phoneNumber: '+919876543210',
-    name: 'Test User',
-    role: 'passenger' as const,
-    isActive: true,
-    preferences: {
-      language: 'en',
-      notifications: true,
-      theme: 'light' as const,
-      preferredRoutes: [],
-      accessibilityNeeds: []
-    },
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    lastLoginAt: new Date().toISOString()
-  }
-];
+import { userStorage } from '../../lib/userStorage';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -36,8 +16,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Check if user already exists
-  const existingUser = users.find(u => u.phoneNumber === phoneNumber);
-  if (existingUser) {
+  if (userStorage.exists(phoneNumber)) {
     return res.status(409).json({ 
       success: false, 
       message: 'User already registered. Please login instead.' 
@@ -45,25 +24,19 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Create new user
-  const newUser = {
-    id: (users.length + 1).toString(),
+  const newUser = userStorage.create({
     phoneNumber,
     name,
-    role: 'passenger' as const,
+    role: 'passenger',
     isActive: true,
     preferences: {
       language: 'en',
       notifications: true,
-      theme: 'light' as const,
+      theme: 'light',
       preferredRoutes: [],
       accessibilityNeeds: []
-    },
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    lastLoginAt: new Date().toISOString()
-  };
-
-  users.push(newUser);
+    }
+  });
 
   // Generate a simple token (in production, use JWT)
   const token = `token_${newUser.id}_${Date.now()}`;

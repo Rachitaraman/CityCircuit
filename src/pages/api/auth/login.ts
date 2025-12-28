@@ -1,25 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-// Mock user database (in production, use a real database)
-const users = [
-  {
-    id: '1',
-    phoneNumber: '+919876543210',
-    name: 'Test User',
-    role: 'passenger',
-    isActive: true,
-    preferences: {
-      language: 'en',
-      notifications: true,
-      theme: 'light',
-      preferredRoutes: [],
-      accessibilityNeeds: []
-    },
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    lastLoginAt: new Date().toISOString()
-  }
-];
+import { userStorage } from '../../lib/userStorage';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -33,7 +13,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Find user by phone number
-  const user = users.find(u => u.phoneNumber === phoneNumber);
+  const user = userStorage.findByPhoneNumber(phoneNumber);
 
   if (!user) {
     return res.status(404).json({ 
@@ -42,11 +22,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     });
   }
 
+  // Update last login
+  userStorage.updateLastLogin(user.id);
+
   // Generate a simple token (in production, use JWT)
   const token = `token_${user.id}_${Date.now()}`;
-
-  // Update last login
-  user.lastLoginAt = new Date().toISOString();
 
   res.status(200).json({
     success: true,
