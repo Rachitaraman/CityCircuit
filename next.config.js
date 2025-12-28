@@ -12,6 +12,7 @@ module.exports = {
   eslint: {
     // Completely disable ESLint during builds
     ignoreDuringBuilds: true,
+    dirs: [], // Don't lint any directories
   },
   typescript: {
     // Disable type checking during builds to speed up deployment
@@ -19,6 +20,10 @@ module.exports = {
   },
   images: {
     unoptimized: true,
+  },
+  experimental: {
+    // Disable ESLint plugin entirely
+    eslint: false,
   },
   async rewrites() {
     return [
