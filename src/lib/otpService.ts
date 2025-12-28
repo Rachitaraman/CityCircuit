@@ -11,10 +11,21 @@ interface OTPData {
 // In-memory OTP storage (use Redis in production)
 const otpStorage = new Map<string, OTPData>();
 
-// Initialize Twilio client
-const twilioClient = process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN 
-  ? twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
-  : null;
+// Initialize Twilio client only when needed and valid
+const getTwilioClient = () => {
+  const accountSid = process.env.TWILIO_ACCOUNT_SID;
+  const authToken = process.env.TWILIO_AUTH_TOKEN;
+  
+  // Only create client if we have valid credentials (not placeholder values)
+  if (accountSid && authToken && 
+      accountSid !== 'your-twilio-account-sid' && 
+      authToken !== 'your-twilio-auth-token' &&
+      accountSid.startsWith('AC')) {
+    return twilio(accountSid, authToken);
+  }
+  
+  return null;
+};
 
 export const otpService = {
   // Generate and send OTP
@@ -34,6 +45,7 @@ export const otpService = {
       });
 
       // Send SMS via Twilio (production) or console (development)
+      const twilioClient = getTwilioClient();
       if (twilioClient && process.env.TWILIO_PHONE_NUMBER && process.env.NODE_ENV === 'production') {
         try {
           await twilioClient.messages.create({
