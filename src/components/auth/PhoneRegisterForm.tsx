@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
+import { OTPVerification } from './OTPVerification';
 import authService, { AuthResponse } from '../../services/authService';
 
 // Import the AuthService class for static methods
@@ -44,14 +45,16 @@ const PhoneRegisterForm: React.FC<PhoneRegisterFormProps> = ({
   onSwitchToLogin,
   initialPhoneNumber = '',
 }) => {
+  const [step, setStep] = useState<'form' | 'otp'>('form');
   const [formData, setFormData] = useState({
     phoneNumber: initialPhoneNumber,
     name: '',
   });
+  const [normalizedPhone, setNormalizedPhone] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -68,9 +71,54 @@ const PhoneRegisterForm: React.FC<PhoneRegisterFormProps> = ({
     }
 
     setIsLoading(true);
+    const normalized = AuthService.normalizePhoneNumber(formData.phoneNumber);
+    setNormalizedPhone(normalized);
 
     try {
-      const normalizedPhone = AuthService.normalizePhoneNumber(formData.phoneNumber);
+      // First check if user already exists
+      const existingUserResponse = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phoneNumber: normalized })
+      });
+
+      const existingUserData = await existingUserResponse.json();
+
+      if (existingUserData.success) {
+        setError('User already registered. Please login instead.');
+        setIsLoading(false);
+        return;
+      }
+
+      // User doesn't exist, send OTP for registration
+      const otpResponse = await fetch('/api/auth/send-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phoneNumber: normalized })
+      });
+
+      const otpData = await otpResponse.json();
+
+      if (otpData.success) {
+        setStep('otp');
+        // Show OTP in development
+        if (otpData.otp) {
+          console.log('🔢 Registration OTP:', otpData.otp);
+        }
+      } else {
+        setError(otpData.message || 'Failed to send OTP');
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+      setError('Network error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleOTPVerified = async () => {
+    try {
+      // Complete registration after OTP verification
       const response: AuthResponse = await authService.register({
         phoneNumber: normalizedPhone,
         name: formData.name.trim(),
@@ -79,13 +127,13 @@ const PhoneRegisterForm: React.FC<PhoneRegisterFormProps> = ({
       if (response.success && response.user) {
         onSuccess?.(response.user);
       } else {
-        setError(response.message || response.error || 'Registration failed');
+        setError(response.message || 'Registration failed');
+        setStep('form');
       }
     } catch (error) {
-      console.error('Registration error:', error);
-      setError('Network error occurred. Please try again.');
-    } finally {
-      setIsLoading(false);
+      console.error('Registration completion error:', error);
+      setError('Registration failed. Please try again.');
+      setStep('form');
     }
   };
 
@@ -106,6 +154,16 @@ const PhoneRegisterForm: React.FC<PhoneRegisterFormProps> = ({
     }
   };
 
+  if (step === 'otp') {
+    return (
+      <OTPVerification
+        phoneNumber={normalizedPhone}
+        onVerified={handleOTPVerified}
+        onBack={() => setStep('form')}
+      />
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -119,7 +177,7 @@ const PhoneRegisterForm: React.FC<PhoneRegisterFormProps> = ({
         <p className="text-neutral-600">Register with your phone number to get started</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleFormSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
             Full Name
@@ -196,18 +254,9 @@ const PhoneRegisterForm: React.FC<PhoneRegisterFormProps> = ({
             size="lg"
             className="flex-1"
             disabled={isLoading || !formData.phoneNumber.trim() || !formData.name.trim()}
+            loading={isLoading}
           >
-            {isLoading ? (
-              <div className="flex items-center justify-center">
-                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Creating Account...
-              </div>
-            ) : (
-              'Create Account'
-            )}
+            {isLoading ? 'Sending OTP...' : 'Send OTP'}
           </Button>
           
           {onCancel && (

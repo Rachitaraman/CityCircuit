@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
+import { OTPVerification } from './OTPVerification';
 import authService, { AuthResponse } from '../../services/authService';
 
 // Import the AuthService class for static methods
@@ -42,11 +43,13 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
   onCancel,
   onSwitchToRegister,
 }) => {
+  const [step, setStep] = useState<'phone' | 'otp'>('phone');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [normalizedPhone, setNormalizedPhone] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handlePhoneSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -57,9 +60,50 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
     }
 
     setIsLoading(true);
+    const normalized = AuthService.normalizePhoneNumber(phoneNumber);
+    setNormalizedPhone(normalized);
 
     try {
-      const normalizedPhone = AuthService.normalizePhoneNumber(phoneNumber);
+      // First check if user exists
+      const loginResponse: AuthResponse = await authService.login({
+        phoneNumber: normalized,
+      });
+
+      if (!loginResponse.success) {
+        setError(loginResponse.message || 'User not registered. Please register first.');
+        setIsLoading(false);
+        return;
+      }
+
+      // User exists, send OTP
+      const otpResponse = await fetch('/api/auth/send-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phoneNumber: normalized })
+      });
+
+      const otpData = await otpResponse.json();
+
+      if (otpData.success) {
+        setStep('otp');
+        // Show OTP in development
+        if (otpData.otp) {
+          console.log('🔢 Login OTP:', otpData.otp);
+        }
+      } else {
+        setError(otpData.message || 'Failed to send OTP');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      setError('Network error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleOTPVerified = async () => {
+    try {
+      // Complete login after OTP verification
       const response: AuthResponse = await authService.login({
         phoneNumber: normalizedPhone,
       });
@@ -67,13 +111,13 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
       if (response.success && response.user) {
         onSuccess?.(response.user);
       } else {
-        setError(response.message || response.error || 'Login failed');
+        setError(response.message || 'Login failed');
+        setStep('phone');
       }
     } catch (error) {
-      console.error('Login error:', error);
-      setError('Network error occurred. Please try again.');
-    } finally {
-      setIsLoading(false);
+      console.error('Login completion error:', error);
+      setError('Login failed. Please try again.');
+      setStep('phone');
     }
   };
 
@@ -89,6 +133,16 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
     }
   };
 
+  if (step === 'otp') {
+    return (
+      <OTPVerification
+        phoneNumber={normalizedPhone}
+        onVerified={handleOTPVerified}
+        onBack={() => setStep('phone')}
+      />
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -102,7 +156,7 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
         <p className="text-neutral-600">Enter your phone number to sign in</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handlePhoneSubmit} className="space-y-4">
         <div>
           <label htmlFor="phoneNumber" className="block text-sm font-medium text-neutral-700 mb-2">
             Phone Number
@@ -162,18 +216,9 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
             size="lg"
             className="flex-1"
             disabled={isLoading || !phoneNumber.trim()}
+            loading={isLoading}
           >
-            {isLoading ? (
-              <div className="flex items-center justify-center">
-                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Signing In...
-              </div>
-            ) : (
-              'Sign In'
-            )}
+            {isLoading ? 'Sending OTP...' : 'Send OTP'}
           </Button>
           
           {onCancel && (
