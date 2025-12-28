@@ -75,22 +75,7 @@ const PhoneRegisterForm: React.FC<PhoneRegisterFormProps> = ({
     setNormalizedPhone(normalized);
 
     try {
-      // First check if user already exists
-      const existingUserResponse = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phoneNumber: normalized })
-      });
-
-      const existingUserData = await existingUserResponse.json();
-
-      if (existingUserData.success) {
-        setError('User already registered. Please login instead.');
-        setIsLoading(false);
-        return;
-      }
-
-      // User doesn't exist, send OTP for registration
+      // Send OTP directly for registration - we'll check user existence after OTP verification
       const otpResponse = await fetch('/api/auth/send-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -118,7 +103,22 @@ const PhoneRegisterForm: React.FC<PhoneRegisterFormProps> = ({
 
   const handleOTPVerified = async () => {
     try {
-      // Complete registration after OTP verification
+      // First check if user already exists for registration
+      const existingUserResponse = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phoneNumber: normalizedPhone })
+      });
+
+      const existingUserData = await existingUserResponse.json();
+
+      if (existingUserData.success) {
+        setError('User already registered. Please login instead.');
+        setStep('form');
+        return;
+      }
+
+      // User doesn't exist, complete registration
       const response: AuthResponse = await authService.register({
         phoneNumber: normalizedPhone,
         name: formData.name.trim(),

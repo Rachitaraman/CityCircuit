@@ -64,18 +64,7 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
     setNormalizedPhone(normalized);
 
     try {
-      // First check if user exists
-      const loginResponse: AuthResponse = await authService.login({
-        phoneNumber: normalized,
-      });
-
-      if (!loginResponse.success) {
-        setError(loginResponse.message || 'User not registered. Please register first.');
-        setIsLoading(false);
-        return;
-      }
-
-      // User exists, send OTP
+      // Send OTP directly for login - we'll check user existence after OTP verification
       const otpResponse = await fetch('/api/auth/send-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -103,15 +92,22 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
 
   const handleOTPVerified = async () => {
     try {
-      // Complete login after OTP verification
-      const response: AuthResponse = await authService.login({
+      // First check if user exists for login
+      const loginResponse: AuthResponse = await authService.login({
         phoneNumber: normalizedPhone,
       });
 
-      if (response.success && response.user) {
-        onSuccess?.(response.user);
+      if (!loginResponse.success) {
+        setError('User not registered. Please register first.');
+        setStep('phone');
+        return;
+      }
+
+      // User exists and OTP verified, complete login
+      if (loginResponse.user) {
+        onSuccess?.(loginResponse.user);
       } else {
-        setError(response.message || 'Login failed');
+        setError('Login failed');
         setStep('phone');
       }
     } catch (error) {
