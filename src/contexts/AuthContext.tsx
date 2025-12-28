@@ -12,6 +12,7 @@ export interface AuthContextType {
   login: (phoneNumber: string) => Promise<{ success: boolean; message: string; error?: string }>;
   register: (phoneNumber: string, name: string) => Promise<{ success: boolean; message: string; error?: string }>;
   logout: () => void;
+  refreshAuth: () => Promise<void>;
   hasRole: (role: 'passenger' | 'operator' | 'admin') => boolean;
   hasAnyRole: (roles: ('passenger' | 'operator' | 'admin')[]) => boolean;
   isAdmin: () => boolean;
@@ -106,6 +107,35 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setUser(null);
   };
 
+  const refreshAuth = async () => {
+    try {
+      const currentUser = authService.getCurrentUser();
+      const token = authService.getToken();
+      
+      console.log('🔄 Refreshing auth state:', { hasUser: !!currentUser, hasToken: !!token });
+      
+      if (currentUser && token) {
+        // Verify token is still valid
+        const isValid = await authService.verifyToken();
+        if (isValid) {
+          console.log('✅ Auth refresh successful, setting user:', currentUser);
+          setUser(currentUser);
+        } else {
+          console.log('❌ Token invalid during refresh, clearing auth');
+          authService.logout();
+          setUser(null);
+        }
+      } else {
+        console.log('❌ No user or token found during refresh');
+        setUser(null);
+      }
+    } catch (error) {
+      console.error('❌ Auth refresh failed:', error);
+      authService.logout();
+      setUser(null);
+    }
+  };
+
   const hasRole = (role: 'passenger' | 'operator' | 'admin'): boolean => {
     return user?.role === role;
   };
@@ -129,6 +159,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     login: handleLogin,
     register: handleRegister,
     logout: handleLogout,
+    refreshAuth,
     hasRole,
     hasAnyRole,
     isAdmin,

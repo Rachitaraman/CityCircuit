@@ -33,7 +33,7 @@ export interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
-  const { user, isAuthenticated, logout } = useAuth();
+  const { user, isAuthenticated, logout, refreshAuth } = useAuth();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isUserProfileOpen, setIsUserProfileOpen] = useState(false);
@@ -51,9 +51,12 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
     }
   };
 
-  const handleAuthSuccess = (user: any) => {
-    console.log('Authentication successful:', user);
+  const handleAuthSuccess = async (user: any) => {
+    console.log('🔐 Header: Authentication successful, refreshing context:', user);
     setIsAuthModalOpen(false);
+    
+    // Refresh AuthContext to pick up the new user
+    await refreshAuth();
   };
 
   const handleLogout = () => {
@@ -90,7 +93,8 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
                       alt="CityCircuit"
                       width={160}
                       height={48}
-                      className="h-10 w-auto"
+                      className="h-10"
+                      style={{ width: 'auto' }}
                       priority
                     />
                   </motion.div>

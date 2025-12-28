@@ -1,6 +1,11 @@
 // OTP Service for phone verification with Twilio SMS
 import twilio from 'twilio';
 
+// Global type declaration for development persistence
+declare global {
+  var otpStorage: Map<string, OTPData> | undefined;
+}
+
 interface OTPData {
   phoneNumber: string;
   otp: string;
@@ -9,7 +14,19 @@ interface OTPData {
 }
 
 // In-memory OTP storage (use Redis in production)
-const otpStorage = new Map<string, OTPData>();
+// For development, use file-based storage to persist across hot reloads
+let otpStorage: Map<string, OTPData>;
+
+if (process.env.NODE_ENV === 'development') {
+  // Use global storage in development to persist across hot reloads
+  if (!global.otpStorage) {
+    global.otpStorage = new Map<string, OTPData>();
+  }
+  otpStorage = global.otpStorage;
+} else {
+  // Use regular Map in production
+  otpStorage = new Map<string, OTPData>();
+}
 
 // Initialize Twilio client only when needed and valid
 const getTwilioClient = () => {
@@ -28,6 +45,34 @@ const getTwilioClient = () => {
 };
 
 export const otpService = {
+  // Clean up expired OTPs
+  cleanupExpired: () => {
+    const now = Date.now();
+    let cleaned = 0;
+    for (const [phone, data] of otpStorage.entries()) {
+      if (now > data.expiresAt) {
+        otpStorage.delete(phone);
+        cleaned++;
+      }
+    }
+    if (cleaned > 0) {
+      console.log(`🧹 Cleaned up ${cleaned} expired OTPs`);
+    }
+  },
+
+  // Debug function to see all stored OTPs
+  debugStorage: () => {
+    console.log('🔍 Current OTP storage:', {
+      size: otpStorage.size,
+      entries: Array.from(otpStorage.entries()).map(([phone, data]) => ({
+        phone,
+        otp: data.otp,
+        expiresAt: new Date(data.expiresAt).toISOString(),
+        attempts: data.attempts,
+        isExpired: Date.now() > data.expiresAt
+      }))
+    });
+  },
   // Generate and send OTP
   sendOTP: async (phoneNumber: string): Promise<{ success: boolean; message: string; otp?: string }> => {
     try {
@@ -93,6 +138,9 @@ export const otpService = {
 
   // Verify OTP
   verifyOTP: (phoneNumber: string, inputOTP: string): { success: boolean; message: string } => {
+    // Clean up expired OTPs first
+    otpService.cleanupExpired();
+    
     const otpData = otpStorage.get(phoneNumber);
     
     if (!otpData) {

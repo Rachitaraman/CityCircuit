@@ -70,7 +70,7 @@ const recentSearches = [
 ];
 
 export default function Home() {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated, user, refreshAuth } = useAuth();
   const [searchResults, setSearchResults] = useState(mockRoutes);
   const [isSearching, setIsSearching] = useState(false);
   const [showAlert, setShowAlert] = useState(true);
@@ -98,9 +98,13 @@ export default function Home() {
     }
   }, [isAuthenticated, user]);
 
-  const handleAuthSuccess = (user: any) => {
-    console.log('🏠 Home: Authentication successful:', user);
+  const handleAuthSuccess = async (user: any) => {
+    console.log('🏠 Home: Authentication successful, refreshing context:', user);
     setShowAuthModal(false);
+    
+    // Refresh AuthContext to pick up the new user
+    await refreshAuth();
+    
     // Stay on homepage after authentication - no redirect
     // User will see the enhanced authenticated homepage with CTA buttons
   };
