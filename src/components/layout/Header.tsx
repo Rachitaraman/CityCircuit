@@ -94,7 +94,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuToggle }) => {
                       width={160}
                       height={48}
                       className="h-10"
-                      style={{ width: 'auto' }}
+                      style={{ width: 'auto', height: '2.5rem' }}
                       priority
                     />
                   </motion.div>

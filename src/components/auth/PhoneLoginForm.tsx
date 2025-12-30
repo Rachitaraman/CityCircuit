@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { OTPVerification } from './OTPVerification';
 import authService, { AuthResponse } from '../../services/authService';
+import { firebaseOtpService } from '../../lib/firebaseOtpService';
 
 // Import the AuthService class for static methods
 class AuthService {
@@ -64,23 +65,14 @@ const PhoneLoginForm: React.FC<PhoneLoginFormProps> = ({
     setNormalizedPhone(normalized);
 
     try {
-      // Send OTP directly for login - we'll check user existence after OTP verification
-      const otpResponse = await fetch('/api/auth/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phoneNumber: normalized })
-      });
+      // Use Firebase OTP service directly
+      const result = await firebaseOtpService.sendOTP(normalized);
 
-      const otpData = await otpResponse.json();
-
-      if (otpData.success) {
+      if (result.success) {
         setStep('otp');
-        // Show OTP in development
-        if (otpData.otp) {
-          console.log('🔢 Login OTP:', otpData.otp);
-        }
+        console.log('📱 Firebase OTP sent for login');
       } else {
-        setError(otpData.message || 'Failed to send OTP');
+        setError(result.message || 'Failed to send OTP');
       }
     } catch (error) {
       console.error('Login error:', error);

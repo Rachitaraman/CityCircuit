@@ -3,7 +3,8 @@
  */
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { authService, User } from '../services/authService';
+import { authService } from '../services/authService';
+import { User } from '../types';
 
 export interface AuthContextType {
   user: User | null;

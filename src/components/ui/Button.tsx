@@ -14,6 +14,7 @@ const buttonVariants = cva(
         danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
       },
       size: {
+        xs: 'h-6 px-2 text-xs',
         sm: 'h-8 px-3 text-sm',
         md: 'h-10 px-4 text-sm',
         lg: 'h-12 px-6 text-base',

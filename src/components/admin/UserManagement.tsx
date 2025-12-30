@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from '../../utils/translations';
-import { User } from '../../services/authService'; // Use AuthService User interface
+import { User } from '../../types'; // Use types User interface
 import { Button } from '../ui/Button';
 import { LoadingSpinner } from '../ui/LoadingSpinner';
 
@@ -14,6 +14,7 @@ interface UserFormData {
   phoneNumber: string;
   role: UserRole;
   name: string;
+  organization?: string;
   isActive: boolean;
 }
 

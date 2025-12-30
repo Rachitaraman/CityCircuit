@@ -3,25 +3,9 @@
  * Handles registration and login with phone numbers only
  */
 
-const API_BASE_URL = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000';
+import { User } from '../types';
 
-export interface User {
-  id: string;
-  phoneNumber: string;
-  name: string;
-  role: 'passenger' | 'operator' | 'admin';
-  isActive: boolean;
-  preferences: {
-    language: string;
-    notifications: boolean;
-    theme: 'light' | 'dark';
-    preferredRoutes: string[];
-    accessibilityNeeds: string[];
-  };
-  createdAt: string;
-  updatedAt: string;
-  lastLoginAt: string;
-}
+const API_BASE_URL = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000';
 
 export interface AuthResponse {
   success: boolean;

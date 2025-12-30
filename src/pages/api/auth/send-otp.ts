@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { otpService } from '../../../lib/otpService';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -13,26 +12,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const result = await otpService.sendOTP(phoneNumber);
+    // For Firebase Phone Auth, the actual SMS sending happens on the client-side
+    // This API route just validates the request and returns success
+    // The client will handle Firebase Phone Auth directly
     
-    if (result.success) {
-      res.status(200).json({
-        success: true,
-        message: result.message,
-        // Include OTP in development for testing (remove in production)
-        ...(process.env.NODE_ENV === 'development' && { otp: result.otp })
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: result.message
-      });
-    }
+    console.log(`📱 OTP request for ${phoneNumber} - will be handled by Firebase on client`);
+    
+    res.status(200).json({
+      success: true,
+      message: 'Ready to send OTP via Firebase',
+      useFirebase: true // Signal to client to use Firebase
+    });
+    
   } catch (error) {
-    console.error('Send OTP error:', error);
+    console.error('Send OTP API error:', error);
     res.status(500).json({
       success: false,
-      message: 'Failed to send OTP'
+      message: 'Failed to process OTP request'
     });
   }
 }

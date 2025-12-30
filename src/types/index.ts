@@ -38,6 +38,8 @@ export const UserPreferencesSchema = z.object({
   theme: z.enum(['light', 'dark']).default('light'),
   notifications: z.boolean().default(true),
   mapStyle: z.enum(['default', 'satellite', 'terrain']).default('default'),
+  preferredRoutes: z.array(z.string()).default([]),
+  accessibilityNeeds: z.array(z.string()).default([]),
 });
 
 export const UserProfileSchema = z.object({
@@ -49,8 +51,21 @@ export const UserProfileSchema = z.object({
 export const UserSchema = z.object({
   id: z.string().uuid(),
   email: z.string().email(),
+  phoneNumber: z.string().default(''), // For backward compatibility
+  name: z.string().default(''), // For backward compatibility - use profile.name instead
   role: UserRoleSchema,
   profile: UserProfileSchema,
+  token: z.string().optional(),
+  isAdmin: z.boolean().default(false),
+  isActive: z.boolean().default(true),
+  preferences: UserPreferencesSchema.default(() => ({
+    language: 'en',
+    theme: 'light',
+    notifications: true,
+    mapStyle: 'default',
+    preferredRoutes: [],
+    accessibilityNeeds: [],
+  })),
   createdAt: z.date(),
   lastLoginAt: z.date(),
 });
@@ -65,10 +80,14 @@ export type User = z.infer<typeof UserSchema>;
 // =============================================================================
 
 export const BusStopSchema = z.object({
+  id: z.string().uuid(),
   name: z.string().min(1).max(200),
+  coordinates: CoordinatesSchema,
+  isAccessible: z.boolean().default(false),
+  address: z.string().max(500).optional(),
+  amenities: z.array(z.string()).default([]),
+  dailyPassengerCount: z.number().int().min(0).optional(),
   styleUrl: z.number().int().default(0),
-  longitude: z.number().min(-180).max(180),
-  latitude: z.number().min(-90).max(90),
   ward: z.string().min(1).max(50),
 });
 

@@ -92,8 +92,8 @@ export function hasReasonableGeographicPath(stops: BusStop[]): boolean {
   
   for (let i = 0; i < stops.length - 1; i++) {
     const distance = calculateDistance(
-      { latitude: stops[i].latitude, longitude: stops[i].longitude },
-      { latitude: stops[i + 1].latitude, longitude: stops[i + 1].longitude }
+      { latitude: stops[i].coordinates.latitude, longitude: stops[i].coordinates.longitude },
+      { latitude: stops[i + 1].coordinates.latitude, longitude: stops[i + 1].coordinates.longitude }
     );
     
     if (distance > MAX_DISTANCE_KM) {
@@ -159,8 +159,8 @@ export function calculateRouteDistance(stops: BusStop[]): number {
   let totalDistance = 0;
   for (let i = 0; i < stops.length - 1; i++) {
     totalDistance += calculateDistance(
-      { latitude: stops[i].latitude, longitude: stops[i].longitude },
-      { latitude: stops[i + 1].latitude, longitude: stops[i + 1].longitude }
+      { latitude: stops[i].coordinates.latitude, longitude: stops[i].coordinates.longitude },
+      { latitude: stops[i + 1].coordinates.latitude, longitude: stops[i + 1].coordinates.longitude }
     );
   }
   

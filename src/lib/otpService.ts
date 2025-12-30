@@ -1,20 +1,25 @@
-// OTP Service for phone verification with Twilio SMS
-import twilio from 'twilio';
+// OTP Service for phone verification with Firebase Phone Auth
+import { 
+  signInWithPhoneNumber, 
+  RecaptchaVerifier,
+  ConfirmationResult
+} from 'firebase/auth';
+import { auth } from './firebase';
 
 // Global type declaration for development persistence
 declare global {
   var otpStorage: Map<string, OTPData> | undefined;
+  var recaptchaVerifier: RecaptchaVerifier | undefined;
 }
 
 interface OTPData {
   phoneNumber: string;
-  otp: string;
+  confirmationResult: ConfirmationResult;
   expiresAt: number;
   attempts: number;
 }
 
-// In-memory OTP storage (use Redis in production)
-// For development, use file-based storage to persist across hot reloads
+// In-memory OTP storage for Firebase confirmation results
 let otpStorage: Map<string, OTPData>;
 
 if (process.env.NODE_ENV === 'development') {
@@ -28,20 +33,27 @@ if (process.env.NODE_ENV === 'development') {
   otpStorage = new Map<string, OTPData>();
 }
 
-// Initialize Twilio client only when needed and valid
-const getTwilioClient = () => {
-  const accountSid = process.env.TWILIO_ACCOUNT_SID;
-  const authToken = process.env.TWILIO_AUTH_TOKEN;
-  
-  // Only create client if we have valid credentials (not placeholder values)
-  if (accountSid && authToken && 
-      accountSid !== 'your-twilio-account-sid' && 
-      authToken !== 'your-twilio-auth-token' &&
-      accountSid.startsWith('AC')) {
-    return twilio(accountSid, authToken);
+// Initialize reCAPTCHA verifier for Firebase
+const getRecaptchaVerifier = () => {
+  if (typeof window === 'undefined') {
+    return null; // Server-side, return null
+  }
+
+  if (!global.recaptchaVerifier) {
+    // Create invisible reCAPTCHA
+    global.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+      size: 'invisible',
+      callback: (response: any) => {
+        console.log('reCAPTCHA solved');
+      },
+      'expired-callback': () => {
+        console.log('reCAPTCHA expired');
+        global.recaptchaVerifier = undefined;
+      }
+    });
   }
   
-  return null;
+  return global.recaptchaVerifier;
 };
 
 export const otpService = {
@@ -66,123 +78,153 @@ export const otpService = {
       size: otpStorage.size,
       entries: Array.from(otpStorage.entries()).map(([phone, data]) => ({
         phone,
-        otp: data.otp,
         expiresAt: new Date(data.expiresAt).toISOString(),
         attempts: data.attempts,
         isExpired: Date.now() > data.expiresAt
       }))
     });
   },
-  // Generate and send OTP
+
+  // Generate and send OTP using Firebase
   sendOTP: async (phoneNumber: string): Promise<{ success: boolean; message: string; otp?: string }> => {
     try {
-      // Generate 6-digit OTP
-      const otp = Math.floor(100000 + Math.random() * 900000).toString();
+      // Clean up expired OTPs first
+      otpService.cleanupExpired();
+
+      // Format phone number (ensure it starts with country code)
+      const formattedPhone = phoneNumber.startsWith('+') ? phoneNumber : `+91${phoneNumber}`;
       
-      // Store OTP with 5-minute expiry
+      // Check if we're on server-side (API route)
+      if (typeof window === 'undefined') {
+        // Server-side: We can't use Firebase Auth directly
+        // Return success and let client handle Firebase
+        console.log(`📱 Firebase SMS request for ${formattedPhone} (handled client-side)`);
+        
+        return {
+          success: true,
+          message: 'Please complete verification on the client'
+        };
+      }
+
+      // Client-side: Use Firebase Phone Auth
+      const recaptchaVerifier = getRecaptchaVerifier();
+      
+      if (!recaptchaVerifier) {
+        throw new Error('reCAPTCHA verifier not available');
+      }
+
+      // Send OTP via Firebase
+      const confirmationResult = await signInWithPhoneNumber(
+        auth, 
+        formattedPhone, 
+        recaptchaVerifier
+      );
+      
+      // Store confirmation result with 5-minute expiry
       const expiresAt = Date.now() + (5 * 60 * 1000); // 5 minutes
       
       otpStorage.set(phoneNumber, {
-        phoneNumber,
-        otp,
+        phoneNumber: formattedPhone,
+        confirmationResult,
         expiresAt,
         attempts: 0
       });
 
-      // Send SMS via Twilio (production) or console (development)
-      const twilioClient = getTwilioClient();
-      if (twilioClient && process.env.TWILIO_PHONE_NUMBER && process.env.NODE_ENV === 'production') {
-        try {
-          await twilioClient.messages.create({
-            body: `Your CityCircuit verification code is: ${otp}. Valid for 5 minutes.`,
-            from: process.env.TWILIO_PHONE_NUMBER,
-            to: phoneNumber
-          });
-          
-          console.log(`📱 SMS sent to ${phoneNumber}`);
-          
-          return {
-            success: true,
-            message: 'OTP sent to your phone number'
-          };
-        } catch (twilioError) {
-          console.error('Twilio SMS error:', twilioError);
-          
-          // Fallback to console in case of SMS failure
-          console.log(`📱 SMS FAILED - OTP for ${phoneNumber}: ${otp}`);
-          
-          return {
-            success: true,
-            message: 'OTP sent (SMS service temporarily unavailable - check console)',
-            otp // Include OTP for development fallback
-          };
-        }
-      } else {
-        // Development mode - show OTP in console
-        console.log(`📱 DEV MODE - OTP for ${phoneNumber}: ${otp}`);
-        
-        return {
-          success: true,
-          message: 'OTP sent successfully (development mode)',
-          otp // Include OTP for development
-        };
+      console.log(`📱 Firebase SMS sent to ${formattedPhone}`);
+      
+      return {
+        success: true,
+        message: 'OTP sent to your phone number via Firebase'
+      };
+      
+    } catch (error: any) {
+      console.error('Firebase OTP service error:', error);
+      
+      // Reset reCAPTCHA on error
+      if (global.recaptchaVerifier) {
+        global.recaptchaVerifier.clear();
+        global.recaptchaVerifier = undefined;
       }
-    } catch (error) {
-      console.error('OTP service error:', error);
+      
       return {
         success: false,
-        message: 'Failed to send OTP'
+        message: error.message || 'Failed to send OTP'
       };
     }
   },
 
-  // Verify OTP
-  verifyOTP: (phoneNumber: string, inputOTP: string): { success: boolean; message: string } => {
-    // Clean up expired OTPs first
-    otpService.cleanupExpired();
-    
-    const otpData = otpStorage.get(phoneNumber);
-    
-    if (!otpData) {
-      return {
-        success: false,
-        message: 'OTP not found. Please request a new OTP.'
-      };
-    }
+  // Verify OTP using Firebase
+  verifyOTP: async (phoneNumber: string, inputOTP: string): Promise<{ success: boolean; message: string; user?: any }> => {
+    try {
+      // Clean up expired OTPs first
+      otpService.cleanupExpired();
+      
+      const otpData = otpStorage.get(phoneNumber);
+      
+      if (!otpData) {
+        return {
+          success: false,
+          message: 'OTP session not found. Please request a new OTP.'
+        };
+      }
 
-    // Check if OTP expired
-    if (Date.now() > otpData.expiresAt) {
+      // Check if OTP expired
+      if (Date.now() > otpData.expiresAt) {
+        otpStorage.delete(phoneNumber);
+        return {
+          success: false,
+          message: 'OTP expired. Please request a new OTP.'
+        };
+      }
+
+      // Check attempts
+      if (otpData.attempts >= 3) {
+        otpStorage.delete(phoneNumber);
+        return {
+          success: false,
+          message: 'Too many failed attempts. Please request a new OTP.'
+        };
+      }
+
+      // Verify OTP with Firebase
+      const result = await otpData.confirmationResult.confirm(inputOTP);
+      
+      // OTP verified successfully
       otpStorage.delete(phoneNumber);
+      
+      return {
+        success: true,
+        message: 'OTP verified successfully',
+        user: result.user
+      };
+      
+    } catch (error: any) {
+      console.error('Firebase OTP verification error:', error);
+      
+      // Increment attempts on failure
+      const otpData = otpStorage.get(phoneNumber);
+      if (otpData) {
+        otpData.attempts++;
+        
+        if (otpData.attempts >= 3) {
+          otpStorage.delete(phoneNumber);
+          return {
+            success: false,
+            message: 'Too many failed attempts. Please request a new OTP.'
+          };
+        }
+        
+        return {
+          success: false,
+          message: `Invalid OTP. ${3 - otpData.attempts} attempts remaining.`
+        };
+      }
+      
       return {
         success: false,
-        message: 'OTP expired. Please request a new OTP.'
+        message: error.message || 'Failed to verify OTP'
       };
     }
-
-    // Check attempts
-    if (otpData.attempts >= 3) {
-      otpStorage.delete(phoneNumber);
-      return {
-        success: false,
-        message: 'Too many failed attempts. Please request a new OTP.'
-      };
-    }
-
-    // Verify OTP
-    if (otpData.otp !== inputOTP) {
-      otpData.attempts++;
-      return {
-        success: false,
-        message: `Invalid OTP. ${3 - otpData.attempts} attempts remaining.`
-      };
-    }
-
-    // OTP verified successfully
-    otpStorage.delete(phoneNumber);
-    return {
-      success: true,
-      message: 'OTP verified successfully'
-    };
   },
 
   // Check if OTP exists and is valid

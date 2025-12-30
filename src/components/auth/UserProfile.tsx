@@ -8,7 +8,7 @@ import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 import { Modal } from '../ui/Modal';
 import { useAuth } from '../../contexts/AuthContext';
-import { User } from '../../services/authService';
+import { User } from '../../types';
 
 // Helper function for formatting phone numbers
 const formatPhoneNumber = (phoneNumber: string): string => {

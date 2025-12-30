@@ -1,6 +1,11 @@
 // Shared user storage for API routes
 // In production, this would be a real database
 
+// Global type declaration for development persistence
+declare global {
+  var userStorage: User[] | undefined;
+}
+
 export interface User {
   id: string;
   phoneNumber: string;
@@ -20,35 +25,60 @@ export interface User {
 }
 
 // Global user storage (in production, use a database)
-let users: User[] = [
-  {
-    id: '1',
-    phoneNumber: '+919876543210',
-    name: 'Test User',
-    role: 'passenger',
-    isActive: true,
-    preferences: {
-      language: 'en',
-      notifications: true,
-      theme: 'light',
-      preferredRoutes: [],
-      accessibilityNeeds: []
-    },
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-    lastLoginAt: new Date().toISOString()
+// Make it persistent across hot reloads in development
+let users: User[];
+
+if (process.env.NODE_ENV === 'development') {
+  // Use global storage in development to persist across hot reloads
+  if (!global.userStorage) {
+    global.userStorage = [
+      {
+        id: '1',
+        phoneNumber: '+919876543210',
+        name: 'Test User',
+        role: 'passenger' as const,
+        isActive: true,
+        preferences: {
+          language: 'en',
+          notifications: true,
+          theme: 'light' as const,
+          preferredRoutes: [],
+          accessibilityNeeds: []
+        },
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        lastLoginAt: new Date().toISOString()
+      }
+    ];
   }
-];
+  users = global.userStorage;
+} else {
+  // Use regular array in production
+  users = [
+    {
+      id: '1',
+      phoneNumber: '+919876543210',
+      name: 'Test User',
+      role: 'passenger',
+      isActive: true,
+      preferences: {
+        language: 'en',
+        notifications: true,
+        theme: 'light',
+        preferredRoutes: [],
+        accessibilityNeeds: []
+      },
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      lastLoginAt: new Date().toISOString()
+    }
+  ];
+}
 
 export const userStorage = {
   // Find user by phone number
   findByPhoneNumber: (phoneNumber: string): User | undefined => {
     return users.find(u => u.phoneNumber === phoneNumber);
-  },
-
-  // Find user by ID
-  findById: (id: string): User | undefined => {
-    return users.find(u => u.id === id);
   },
 
   // Create new user
@@ -62,7 +92,15 @@ export const userStorage = {
     };
     
     users.push(newUser);
+    console.log('👤 User created and stored:', { id: newUser.id, name: newUser.name, totalUsers: users.length });
     return newUser;
+  },
+
+  // Find user by ID
+  findById: (id: string): User | undefined => {
+    const user = users.find(u => u.id === id);
+    console.log('🔍 Finding user by ID:', { id, found: !!user, totalUsers: users.length, userIds: users.map(u => u.id) });
+    return user;
   },
 
   // Update user

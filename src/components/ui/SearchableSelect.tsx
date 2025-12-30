@@ -31,7 +31,7 @@ export interface SearchableSelectOption {
 }
 
 export interface SearchableSelectProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'onSelect'>,
     VariantProps<typeof searchableSelectVariants> {
   label?: string;
   error?: string;

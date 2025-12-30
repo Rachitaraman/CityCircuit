@@ -63,7 +63,11 @@ export function createMockUser(overrides: Partial<User> = {}): User {
   return {
     id: uuidv4(),
     email: `user${Math.floor(Math.random() * 1000)}@example.com`,
+    phoneNumber: `+91-${Math.floor(Math.random() * 9000000000) + 1000000000}`,
+    name: `Test User ${Math.floor(Math.random() * 100)}`,
     role: roles[Math.floor(Math.random() * roles.length)],
+    isAdmin: Math.random() > 0.8, // 20% chance of being admin
+    isActive: Math.random() > 0.1, // 90% chance of being active
     profile: {
       name: `Test User ${Math.floor(Math.random() * 100)}`,
       organization: Math.random() > 0.5 ? `Organization ${Math.floor(Math.random() * 10)}` : undefined,
@@ -72,7 +76,17 @@ export function createMockUser(overrides: Partial<User> = {}): User {
         theme: themes[Math.floor(Math.random() * themes.length)],
         notifications: Math.random() > 0.3,
         mapStyle: mapStyles[Math.floor(Math.random() * mapStyles.length)],
+        preferredRoutes: [],
+        accessibilityNeeds: [],
       },
+    },
+    preferences: {
+      language: Math.random() > 0.7 ? 'hi' : 'en',
+      theme: themes[Math.floor(Math.random() * themes.length)],
+      notifications: Math.random() > 0.3,
+      mapStyle: mapStyles[Math.floor(Math.random() * mapStyles.length)],
+      preferredRoutes: [],
+      accessibilityNeeds: [],
     },
     createdAt: new Date(Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000),
     lastLoginAt: new Date(Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000),
@@ -102,10 +116,15 @@ export function createMockBusStop(overrides: Partial<BusStop> = {}): BusStop {
   const wardNumber = Math.floor(Math.random() * 30) + 1;
   
   return {
+    id: uuidv4(),
     name: `${landmark.name.toUpperCase()} - ${area.toUpperCase()}`,
+    coordinates: {
+      latitude: landmark.lat + latVariation,
+      longitude: landmark.lng + lngVariation,
+    },
+    isAccessible: Math.random() > 0.7, // 30% accessible
+    amenities: ['Shelter', 'Seating'].filter(() => Math.random() > 0.5),
     styleUrl: 0,
-    longitude: landmark.lng + lngVariation,
-    latitude: landmark.lat + latVariation,
     ward: `${wardPrefix}-${wardNumber}`,
     ...overrides,
   };

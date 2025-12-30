@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
+import { firebaseOtpService } from '../../lib/firebaseOtpService';
 
 export interface OTPVerificationProps {
   phoneNumber: string;
@@ -75,26 +76,20 @@ const OTPVerification: React.FC<OTPVerificationProps> = ({
     setError('');
 
     try {
-      const response = await fetch('/api/auth/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          phoneNumber,
-          otp: otpToVerify
-        })
-      });
+      // Use Firebase OTP service directly
+      const result = await firebaseOtpService.verifyOTP(phoneNumber, otpToVerify);
 
-      const data = await response.json();
-
-      if (data.success) {
+      if (result.success) {
+        console.log('📱 Firebase OTP verified successfully');
         onVerified();
       } else {
-        setError(data.message);
+        setError(result.message);
         // Clear OTP on error
         setOtp(['', '', '', '', '', '']);
         inputRefs.current[0]?.focus();
       }
     } catch (error) {
+      console.error('OTP verification error:', error);
       setError('Network error. Please try again.');
     } finally {
       setIsVerifying(false);
@@ -105,29 +100,22 @@ const OTPVerification: React.FC<OTPVerificationProps> = ({
     if (!canResend) return;
 
     try {
-      const response = await fetch('/api/auth/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phoneNumber })
-      });
+      // Use Firebase OTP service directly
+      const result = await firebaseOtpService.sendOTP(phoneNumber);
 
-      const data = await response.json();
-
-      if (data.success) {
+      if (result.success) {
         setTimeLeft(300); // Reset timer
         setCanResend(false);
         setError('');
         setOtp(['', '', '', '', '', '']);
         inputRefs.current[0]?.focus();
         
-        // Show OTP in development
-        if (data.otp) {
-          console.log('🔢 New OTP:', data.otp);
-        }
+        console.log('📱 Firebase OTP resent successfully');
       } else {
-        setError(data.message);
+        setError(result.message);
       }
     } catch (error) {
+      console.error('Resend OTP error:', error);
       setError('Failed to resend OTP');
     }
   };

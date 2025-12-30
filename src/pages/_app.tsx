@@ -6,6 +6,8 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <AuthProvider>
       <Component {...pageProps} />
+      {/* Hidden reCAPTCHA container for Firebase Phone Auth */}
+      <div id="recaptcha-container" style={{ display: 'none' }}></div>
     </AuthProvider>
   );
 }

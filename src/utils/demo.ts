@@ -41,7 +41,11 @@ export function demonstrateUserValidation() {
   const validUser: User = {
     id: '123e4567-e89b-12d3-a456-426614174000',
     email: 'operator@best.gov.in',
+    phoneNumber: '+91-9876543213',
+    name: 'Mumbai Bus Operator',
     role: 'operator',
+    isAdmin: false,
+    isActive: true,
     profile: {
       name: 'Mumbai Bus Operator',
       organization: 'BEST (Brihanmumbai Electric Supply and Transport)',
@@ -50,7 +54,17 @@ export function demonstrateUserValidation() {
         theme: 'light',
         notifications: true,
         mapStyle: 'default',
+        preferredRoutes: [],
+        accessibilityNeeds: [],
       },
+    },
+    preferences: {
+      language: 'en',
+      theme: 'light',
+      notifications: true,
+      mapStyle: 'default',
+      preferredRoutes: [],
+      accessibilityNeeds: [],
     },
     createdAt: new Date('2024-01-01'),
     lastLoginAt: new Date(),
@@ -76,19 +90,29 @@ export function demonstrateBusStopValidation() {
   
   // Create Mumbai bus stops
   const cstStation: BusStop = {
+    id: '123e4567-e89b-12d3-a456-426614174001',
     name: 'CHHATRAPATI SHIVAJI MAHARAJ TERMINUS (GPO)',
+    coordinates: {
+      latitude: 18.9401,
+      longitude: 72.8352,
+    },
+    isAccessible: true,
     styleUrl: 0,
-    longitude: 72.8352,
-    latitude: 18.9401,
     ward: 'NW-19',
+    amenities: ['Waiting Area', 'Ticket Counter', 'Restrooms'],
   };
 
   const gatewayOfIndia: BusStop = {
+    id: '123e4567-e89b-12d3-a456-426614174002',
     name: 'GATEWAY OF INDIA',
+    coordinates: {
+      latitude: 18.9220,
+      longitude: 72.8347,
+    },
+    isAccessible: false,
     styleUrl: 0,
-    longitude: 72.8347,
-    latitude: 18.9220,
     ward: 'NW-19',
+    amenities: ['Shelter'],
   };
 
   // Validate bus stops
@@ -99,13 +123,13 @@ export function demonstrateBusStopValidation() {
   console.log('Gateway validation:', gatewayValidation.success);
 
   // Check Mumbai coordinates
-  console.log('CST in Mumbai bounds:', isValidMumbaiCoordinates(cstStation.latitude, cstStation.longitude));
-  console.log('Gateway in Mumbai bounds:', isValidMumbaiCoordinates(gatewayOfIndia.latitude, gatewayOfIndia.longitude));
+  console.log('CST in Mumbai bounds:', isValidMumbaiCoordinates(cstStation.coordinates.latitude, cstStation.coordinates.longitude));
+  console.log('Gateway in Mumbai bounds:', isValidMumbaiCoordinates(gatewayOfIndia.coordinates.latitude, gatewayOfIndia.coordinates.longitude));
 
   // Calculate distance between stops
   const distance = calculateDistance(
-    { latitude: cstStation.latitude, longitude: cstStation.longitude },
-    { latitude: gatewayOfIndia.latitude, longitude: gatewayOfIndia.longitude }
+    { latitude: cstStation.coordinates.latitude, longitude: cstStation.coordinates.longitude },
+    { latitude: gatewayOfIndia.coordinates.latitude, longitude: gatewayOfIndia.coordinates.longitude }
   );
   console.log(`Distance between CST and Gateway: ${distance.toFixed(2)} km`);
 
@@ -122,11 +146,16 @@ export function demonstrateRouteValidation() {
   
   // Create additional stops for a complete route
   const marineDrive: BusStop = {
+    id: '123e4567-e89b-12d3-a456-426614174003',
     name: 'MARINE DRIVE',
+    coordinates: {
+      latitude: 18.9439,
+      longitude: 72.8234,
+    },
+    isAccessible: true,
     styleUrl: 0,
-    longitude: 72.8234,
-    latitude: 18.9439,
     ward: 'NW-19',
+    amenities: ['Shelter', 'Seating'],
   };
 
   // Create a route
@@ -151,8 +180,8 @@ export function demonstrateRouteValidation() {
   let totalDistance = 0;
   for (let i = 0; i < route1.stops.length - 1; i++) {
     const segmentDistance = calculateDistance(
-      { latitude: route1.stops[i].latitude, longitude: route1.stops[i].longitude },
-      { latitude: route1.stops[i + 1].latitude, longitude: route1.stops[i + 1].longitude }
+      { latitude: route1.stops[i].coordinates.latitude, longitude: route1.stops[i].coordinates.longitude },
+      { latitude: route1.stops[i + 1].coordinates.latitude, longitude: route1.stops[i + 1].coordinates.longitude }
     );
     totalDistance += segmentDistance;
     console.log(`Segment ${i + 1}: ${segmentDistance.toFixed(2)} km`);

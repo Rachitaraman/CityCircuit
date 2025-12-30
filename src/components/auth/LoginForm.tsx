@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/Card';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
 import { Alert } from '../ui/Alert';
-import { useAuth } from '../../contexts/AuthContext';
+import { AuthService } from '../../utils/auth';
 
 export interface LoginFormProps {
   onSuccess?: () => void;
@@ -21,7 +21,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
   onCancel,
   className = '',
 }) => {
-  const { login, isLoading } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -42,14 +42,16 @@ const LoginForm: React.FC<LoginFormProps> = ({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    setIsLoading(true);
 
     if (!formData.email || !formData.password) {
       setError('Please enter both email and password');
+      setIsLoading(false);
       return;
     }
 
     try {
-      const response = await login(formData);
+      const response = await AuthService.login(formData);
       if (response.success) {
         onSuccess?.();
       } else {
@@ -57,6 +59,8 @@ const LoginForm: React.FC<LoginFormProps> = ({
       }
     } catch (err) {
       setError('An unexpected error occurred');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -68,9 +72,10 @@ const LoginForm: React.FC<LoginFormProps> = ({
     };
 
     setFormData(demoCredentials[role]);
+    setIsLoading(true);
     
     try {
-      const response = await login(demoCredentials[role]);
+      const response = await AuthService.login(demoCredentials[role]);
       if (response.success) {
         onSuccess?.();
       } else {
@@ -78,6 +83,8 @@ const LoginForm: React.FC<LoginFormProps> = ({
       }
     } catch (err) {
       setError('Demo login failed');
+    } finally {
+      setIsLoading(false);
     }
   };
 
